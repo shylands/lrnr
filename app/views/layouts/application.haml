@@ -6,10 +6,20 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand{:href => "#"} Project name
+          .nav-collapse.collapse
+            %ul.nav.pull-right
+              %li.active
+                %a{:href => "#"} Login
     - if current_user
       = link_to 'Add a new topic', new_topic_path
-      - if @topic
-        = link_to 'Add a post', new_topic_post_path(@topic)
     - else
       = link_to 'Sign up', new_user_registration_path
       = link_to 'Sign in', new_user_session_path
