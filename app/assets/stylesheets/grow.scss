@@ -88,8 +88,11 @@ body {
 	font-weight: 700; color:#CACAD8; margin-top:38px; background: #fff image-url("search-icon.png") no-repeat 884px; padding:5px 10px;}
 .nav > li > a {color:#747484;}
 
-.vote-count {background:#FFFFBF; border-radius:5px; height:70px; width:70px; text-align:center;}
-.vote-count { @include freight-heavy; padding-top:20px; font-size:28px;}
+.vote-count {background:#FFFFBF; border-radius:5px; height:70px; width:70px; text-align:center; line-height: 17px;}
+.vote-count { @include freight-heavy; padding-top:11px; font-size:28px;}
+.vote-btn a {font-size:12px; @include freight-heavy; background:#CEF000; -webkit-box-shadow: 0px 2px 0px rgba(212, 242, 0, 1);
+-moz-box-shadow:    0px 2px 0px rgba(212, 242, 0, 1);
+box-shadow:         0px 2px 0px rgba(212, 242, 0, 1); padding:3px 16px; border-radius:3px; color:#0E0E1F;}
 
 // Typography
 
