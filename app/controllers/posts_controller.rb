@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   # GET /posts/new.json
   def new
-    @post = Post.new
+    @post = current_user.posts.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -87,8 +87,13 @@ class PostsController < ApplicationController
   private
 
   def auth
+    # This is horrible, but I'll figure it out later
     unless current_user
       redirect_to posts_path, notice: 'You need to be logged in to do that'
+      unless current_user = @post.user
+        redirect_to posts_path, notice: "You don't have permission to do that"
+      end
     end
+
   end
 end
