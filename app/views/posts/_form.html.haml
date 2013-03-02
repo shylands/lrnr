@@ -1,4 +1,4 @@
-= form_for @post do |f|
+= simple_form_for @post, :html => {:class => 'form-horizontal' } do |f|
   - if @post.errors.any?
     #error_explanation
       %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
@@ -7,16 +7,8 @@
           %li= msg
 
   .field
-    = f.label :title
-    = f.text_field :title
+    = f.input :title
   .field
-    = f.label :url
-    = f.text_field :url
-  .field
-    = f.label :user
-    = f.text_field :user
-  .field
-    = f.label :topic
-    = f.text_field :topic
+    = f.input :url
   .actions
     = f.submit 'Save'

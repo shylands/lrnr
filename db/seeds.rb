@@ -7,8 +7,14 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 users = User.create([
-    {name: 'tommy', email: 'hi@tommyp.org', password: 'password', password_confirmation: 'password'},
-    {name: 'shylands', email: 'shylands@rumblelabs.com', password: 'password', password_confirmation: 'password'},
-    {name: 'andy', email: 'andy@grow.com', password: 'password', password_confirmation: 'password'},
-    {name: 'jonny', email: 'jonny@grow.com', password: 'password', password_confirmation: 'password'}
+    {username: 'tommy', email: 'hi@tommyp.org', password: 'password', password_confirmation: 'password'},
+    {username: 'shylands', email: 'shylands@rumblelabs.com', password: 'password', password_confirmation: 'password'},
+    {username: 'andy', email: 'andy@grow.com', password: 'password', password_confirmation: 'password'},
+    {username: 'jonny', email: 'jonny@grow.com', password: 'password', password_confirmation: 'password'}
   ])
+
+Topic.create(name: 'Web Design', user: User.first)
+
+Post.create(title: 'Really nice tutorial on HTML', url: 'http://google.com', user: User.all.sample, topic: Topic.first)
+Post.create(title: 'Some useful tips when working with CSS', url: 'http://bbc.co.uk', user: User.all.sample, topic: Topic.first)
+Post.create(title: 'How to work with Bootstrap', url: 'http://twitter.github.com/bootstrap', user: User.all.sample, topic: Topic.first)
