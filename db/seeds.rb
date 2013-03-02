@@ -10,7 +10,7 @@ users = User.create([
     {username: 'tommy', email: 'hi@tommyp.org', password: 'password', password_confirmation: 'password'},
     {username: 'shylands', email: 'shylands@rumblelabs.com', password: 'password', password_confirmation: 'password'},
     {username: 'andy', email: 'andy@grow.com', password: 'password', password_confirmation: 'password'},
-    {username: 'johnny', email: 'jonathan_alban@me.com', password: 'password', password_confirmation: 'password'}
+    {username: 'johnny', email: 'jonathan_alban@me.com', password: 'password', password_confirmation: 'password'},
     {username: 'matt', email: 'mwc0000@gmail.com', password: 'password', password_confirmation: 'password'}
   ])
 
