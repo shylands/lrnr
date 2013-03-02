@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :topic
   has_many :votes
+  has_many :tags
 
   extend FriendlyId
   friendly_id :title, use: :slugged
