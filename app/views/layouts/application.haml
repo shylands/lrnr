@@ -12,17 +12,29 @@
     .navbar.navbar-static-top.navbar-inverse
       .navbar-inner
         .container
-          %ul.pull-right.nav
-            - if current_user
-              %li
-                = image_tag avatar_url(current_user)
-              %li
-                = link_to 'Add a new post', new_post_path
-              %li
-                = link_to 'Sign out', destroy_user_session_path, :method => :delete
-            - else
-              %li
-                = link_to 'Sign up', new_user_registration_path
-              %li
-                = link_to 'Sign in', new_user_session_path
-      = yield
+          %a.brand{:href => "#"}
+            LRNR
+            %span Learn. Do. Grow
+            %ul.pull-right.nav
+              - if current_user
+                %li
+                  = image_tag avatar_url(current_user)
+                %li
+                  = link_to 'Add a new post', new_post_path
+                %li
+                  = link_to 'Sign out', destroy_user_session_path, :method => :delete
+              - else
+                %li
+                  = link_to 'Sign up', new_user_registration_path
+                %li
+                  = link_to 'Sign in', new_user_session_path
+
+    .search-bar
+      .row-fluid
+        .container
+          %input{"data-provide" => "typeahead", :type => "text"}/
+
+    .row-fluid
+      .container
+
+        = yield
