@@ -27,6 +27,6 @@
         - if current_user
           - vote = current_user.votes.where(:post_id => post.id).exists?
           - if vote
-            = link_to 'Remove vote', post_vote_path(post, vote), :method => :delete
+            = link_to 'Remove vote', post_vote_path(post, vote), :method => :delete, :remote => true
           -else
-            = link_to 'Vote Up', post_vote_path(post, vote), :method => :post
+            = link_to 'Vote Up', post_vote_path(post, vote), :method => :post, :remote => true
