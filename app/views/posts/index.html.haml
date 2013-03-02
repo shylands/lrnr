@@ -1,12 +1,12 @@
 %h1
   Newest content
 
-.posts
+.posts.content-list
   - @posts.each do |post|
-    .post
-      %p
+    .post.content-card
+      %h1.content-card-title
         = link_to post.title, post.url
-      %p.content-list-subtext
+      %p.content-card-subtext
         From
         = link_to  "Website Url", "#"
         by
@@ -14,8 +14,11 @@
         = time_ago_in_words(post.created_at)
         ago
         - if current_user == post.user
+      .content-card-topics
         in
         = link_to post.topic.name, topic_path(post.topic)
+
+
 
 
           %br
