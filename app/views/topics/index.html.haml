@@ -1,21 +1,19 @@
-%h1 Listing topics
+%h1
+  Newest content
 
-%table
-  %tr
-    %th Name
-    %th User
-    %th
-    %th
-    %th
+%h2
+  = 'Add a post', new_topics_post_path
 
-  - @topics.each do |topic|
-    %tr
-      %td= topic.name
-      %td= topic.user
-      %td= link_to 'Show', topic
-      %td= link_to 'Edit', edit_topic_path(topic)
-      %td= link_to 'Destroy', topic, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Topic', new_topic_path
+.posts
+  - @posts.each do |post|
+    .post
+      %p
+        = link_to post.title, post.url
+        in
+        = link_to post.topic.name, topic_path(post.topic)
+        by 
+        = post.user.username
+        - if current_user == post.user
+          %br
+          = link_to 'Edit', edit_post_path(post)
+          = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' } 

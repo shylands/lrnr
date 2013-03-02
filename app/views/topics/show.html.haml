@@ -1,12 +1,17 @@
-%p#notice= notice
-
-%p
-  %b Name:
+%h1
+  Newest content in
   = @topic.name
-%p
-  %b User:
-  = @topic.user
 
-= link_to 'Edit', edit_topic_path(@topic)
-\|
-= link_to 'Back', topics_path
+.posts
+  - @topic.posts.each do |post|
+    .post
+      %p
+        = link_to post.title, post.url
+        by 
+        = post.user.username
+        = time_ago_in_words(post.created_at)
+        ago
+        - if current_user == post.user
+          %br
+          = link_to 'Edit', edit_post_path(post)
+          = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' } 

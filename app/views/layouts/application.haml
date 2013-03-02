@@ -7,7 +7,7 @@
     = csrf_meta_tags
   %body
     - if current_user
-      = link_to 'Submit a Link', new_post_path
+      = link_to 'Add a new topic', new_topic_path
     - else
       = link_to 'Sign up', new_user_registration_path
       = link_to 'Sign in', new_user_session_path

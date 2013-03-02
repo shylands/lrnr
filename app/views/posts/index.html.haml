@@ -8,6 +8,10 @@
         = link_to post.title, post.url
         in
         = link_to post.topic.name, topic_path(post.topic)
+        by 
+        = post.user.username
+        = time_ago_in_words(post.created_at)
         - if current_user == post.user
+          %br
           = link_to 'Edit', edit_post_path(post)
-          = link_to 'Destroy', post, :method => :delete, :data => { :confirm => 'Are you sure?' } 
+          = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' } 

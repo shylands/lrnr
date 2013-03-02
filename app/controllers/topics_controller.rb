@@ -1,6 +1,10 @@
 class TopicsController < ApplicationController
+
+  before_filter :auth, :except => [:index, :show]
+
   # GET /topics
   # GET /topics.json
+
   def index
     @topics = Topic.all
 
@@ -24,7 +28,7 @@ class TopicsController < ApplicationController
   # GET /topics/new
   # GET /topics/new.json
   def new
-    @topic = Topic.new
+    @topic = current_user.topics.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -78,6 +82,18 @@ class TopicsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to topics_url }
       format.json { head :no_content }
+    end
+  end
+
+  private
+
+  def auth
+    # This is horrible, but I'll figure it out later
+    unless current_user
+      redirect_to posts_path, notice: 'You need to be logged in to do that'
+      unless current_user = @post.user
+        redirect_to posts_path, notice: "You don't have permission to do that"
+      end
     end
   end
 end

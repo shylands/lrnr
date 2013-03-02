@@ -94,6 +94,6 @@ class PostsController < ApplicationController
         redirect_to posts_path, notice: "You don't have permission to do that"
       end
     end
-
   end
+  
 end
