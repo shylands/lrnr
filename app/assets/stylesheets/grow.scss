@@ -25,6 +25,7 @@ body {
   line-height: 1.5em;
 }
 
+
 .content-card {
   margin: 0 0 20px 0;
   border-bottom:1px solid #ECECFB;
@@ -53,7 +54,16 @@ body {
 }
 
 .about-strapline {
+  width: 100%;
   font-size: 16px;
+}
+
+.strapline {
+  font-weight: 200;
+  font-size: 28px;
+  a {
+    text-decoration: underline;
+  }
 }
 
 
