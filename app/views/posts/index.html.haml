@@ -20,7 +20,7 @@
           = link_to 'Edit', edit_post_path(post)
           = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-<<<<<<< HEAD
+
     .posts.content-list
       - @posts.each do |post|
         .post.content-card
@@ -48,15 +48,3 @@
               -if post.votes.where(:user => current_user).exists?
                 = link_to 'Remove vote', posts_vote_path(:method => :delete)
               -else
-                = link_to 'Vote Up', posts_vote_path(:method => :post)
-=======
-    .post.actions
-      .vote-count
-        post.votes.size
-      .vote
-        - if current_user
-          -if post.votes.where(:user => current_user).exists?
-            = link_to 'Remove vote', posts_vote_path(:method => :delete)
-          -else
-            = link_to 'Vote Up', posts_vote_path(:method => :post)
->>>>>>> Layout Changes
