@@ -89,9 +89,11 @@ body {
 	font-weight: 700; color:#CACAD8; color:#fff;}
 .navbar a.brand span {color:#747484; font-size:12px;}
 .search-bar {background:#EAFAFF; height:140px;}
-.search-bar input {width:100%; border:1px solid #DBDBEA; height:67px; border-radius:0; font-size:48px; font-family: "freight-sans-pro",sans-serif;
-	font-style: normal;
-	font-weight: 700; color:#CACAD8; margin-top:38px; background: #fff image-url("search-icon.png") no-repeat 884px; padding:5px 10px;}
+.search-bar input {width:100%; border:1px solid #DBDBEA; height:67px; border-radius:0; font-size:30px; font-family: "freight-sans-pro",sans-serif;
+	font-style: normal; line-height:2em;
+	font-weight: 700; color:#E2E2F3; margin-top:38px; background: #fff image-url("search-icon.png") no-repeat 884px; padding:20px;}
+input::-webkit-input-placeholder {color:#E2E2F3;}
+
 .nav > li > a {color:#747484;}
 
 .vote-count {background:#FFFFBF; border-radius:5px; height:70px; width:70px; text-align:center; line-height: 17px;}

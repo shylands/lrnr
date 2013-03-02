@@ -15,7 +15,7 @@
 
 
           %a.brand{:href => posts_path}
-            LRNT
+            LRNR
             %span Learn. Do. Grow
           %ul.pull-right.nav
             - if current_user
@@ -34,7 +34,7 @@
     .search-bar
       .container
         .row-fluid
-          %input{"data-provide" => "typeahead", :type => "text"}/
+          %input{"data-provide" => "typeahead", :type => "text", :placeholder => "I WANT TO LEARN..."}/
 
     .container
       .row-fluid
