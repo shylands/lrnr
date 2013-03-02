@@ -1,26 +1,34 @@
-%h1
-  Newest content
+.search-bar
+  .row-fluid
+    .container
+      .span4
+        %h1
+          LRNR
+        %h2.small
+          Learn. Do. Grow
+      .span8
+        %input{"data-provide" => "typeahead", :type => "text"}/
 
-.posts.content-list
-  - @posts.each do |post|
-    .post.content-card
-      %h1.content-card-title
-        = link_to post.title, post.url
-      %p.content-card-subtext
-        From
-        = link_to  "Website Url", "#"
-        by
-        = post.user.username
-        = time_ago_in_words(post.created_at)
-        ago
-      .content-card-topics
-        = link_to post.topic.name, topic_path(post.topic), :class => 'content-card-tag'
-        - if current_user == post.user
+.row-fluid
+  .container
+    %h1.beta
+      Popular this week
 
-
-
-
-
+    .posts.content-list
+      - @posts.each do |post|
+        .post.content-card
+          %h1.content-card-title
+            = link_to post.title, post.url
+          %p.content-card-subtext
+            From
+            = link_to  "Website Url", "#"
+            by
+            = post.user.username
+            = time_ago_in_words(post.created_at)
+            ago
+          .content-card-topics
+            = link_to post.topic.name, topic_path(post.topic), :class => 'content-card-tag'
+            - if current_user == post.user
           %br
           = link_to 'Edit', edit_post_path(post)
           = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }

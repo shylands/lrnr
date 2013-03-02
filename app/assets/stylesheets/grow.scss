@@ -48,6 +48,11 @@ body {
 
 }
 
+.navbar-inner {background:#0F0F1F}
+.search-bar {background:#EAFAFF; height:140px;}
+.search-bar input {width:100%; border:1px solid #DBDBEA; height:67px; border-radius:0; font-size:48px; font-family: "freight-sans-pro",sans-serif;
+	font-style: normal;
+	font-weight: 700; color:#CACAD8; margin-top:38px;}
 
 
 // Typography
@@ -57,6 +62,9 @@ h1 {
 	font-style: normal;
 	font-weight: 700;
 }
+
+h1.beta {font-size:18px; text-transform:uppercase;}
+h2 {font-size:16px;}
 
 p {
 	font-family: "freight-sans-pro",sans-serif;
