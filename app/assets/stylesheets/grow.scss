@@ -9,8 +9,8 @@ $grey: #666;
 $black: #333;
 
 @mixin freight-heavy {
-	font-family: "freight-sans-pro",sans-serif; 
-	font-style: normal; 
+	font-family: "freight-sans-pro",sans-serif;
+	font-style: normal;
 	font-weight: 700;
 }
 
@@ -51,6 +51,12 @@ body {
   font-weight: bold;
 
 }
+
+.about-strapline {
+  font-size: 16px;
+}
+
+
 
 .sub-page {
   margin-top: 40px;
