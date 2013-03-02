@@ -23,7 +23,7 @@ body {
 
 .content-card {
   margin: 0 0 20px 0;
-  border-bottom:1px dashed #D0D0D0;
+  border-bottom:1px solid #ECECFB;
   padding: 0 0 20px 0;
 }
 
@@ -49,6 +49,7 @@ body {
 }
 
 .navbar-inner {background:#0F0F1F;}
+
 .navbar a.brand {font-size:18px; font-style: normal;
 	font-weight: 700; color:#CACAD8; color:#fff;}
 .navbar a.brand span {color:#747484; font-size:12px;}
@@ -56,7 +57,7 @@ body {
 .search-bar input {width:100%; border:1px solid #DBDBEA; height:67px; border-radius:0; font-size:48px; font-family: "freight-sans-pro",sans-serif;
 	font-style: normal;
 	font-weight: 700; color:#CACAD8; margin-top:38px; background: #fff image-url("search-icon.png") no-repeat 884px; padding:5px 10px;}
-
+.nav > li > a {color:#747484;}
 
 // Typography
 
