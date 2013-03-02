@@ -15,7 +15,10 @@
           .span2
             .post.actions
             .vote-count
-              = post.votes.size
+              %p
+                = post.votes.size
+              .vote-btn
+                %a{:href => "#"} LRNT
             .vote
               - if current_user
                 - vote = current_user.votes.where(:post_id => post.id).exists?
