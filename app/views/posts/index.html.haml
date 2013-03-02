@@ -14,6 +14,7 @@
     %h1.beta
       Popular this week
 
+<<<<<<< HEAD
     .posts.content-list
       - @posts.each do |post|
         .post.content-card
@@ -32,3 +33,19 @@
               %br/
               = link_to 'Edit', edit_post_path(post)
               = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+=======
+          %br
+          = link_to 'Edit', edit_topic_post_path(@topic, post)
+          = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+    .post.actions
+      .vote-count
+        post.votes.size
+      .vote
+        - if current_user
+          -if post.votes.where(:user => current_user).exists?
+            = link_to 'Remove vote', post_vote_path(:method => :delete)
+          -else
+            = link_to 'Vote Up', post_vote_path(:method => :post)
+
+>>>>>>> Vote
