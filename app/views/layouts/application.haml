@@ -13,6 +13,7 @@
             - if current_user
               %li
                 = link_to 'Add a new topic', new_topic_path
+              %li
                 = link_to 'Sign out', destroy_user_session_path
             - else
               %li
