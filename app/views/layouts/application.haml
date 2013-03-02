@@ -15,7 +15,6 @@
           %a.brand{:href => "#"}
             LRNR
             %span Learn. Do. Grow
-<<<<<<< HEAD
           %ul.pull-right.nav
             - if current_user
               %li
@@ -29,21 +28,6 @@
                 = link_to 'Sign up', new_user_registration_path
               %li
                 = link_to 'Sign in', new_user_session_path
-=======
-            %ul.pull-right.nav
-              - if current_user
-                %li
-                  = link_to image_tag(avatar_url(current_user)), user_profile_path(current_user.username)
-                %li
-                  = link_to 'Add a new post', new_post_path
-                %li
-                  = link_to 'Sign out', destroy_user_session_path, :method => :delete
-              - else
-                %li
-                  = link_to 'Sign up', new_user_registration_path
-                %li
-                  = link_to 'Sign in', new_user_session_path
->>>>>>> Start of user dashboard
 
     .search-bar
       .container
