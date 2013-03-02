@@ -38,7 +38,7 @@
             = post.votes.size
           .vote
             - if current_user
-              -if post.votes.where(:user => current_user).exists?
+              - if current_user.votes.where(:post_id => post.id)
                 = link_to 'Remove vote', posts_vote_path(:method => :delete)
               -else
                 = link_to 'Vote Up', posts_vote_path(:method => :post)
