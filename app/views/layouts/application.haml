@@ -9,6 +9,7 @@
     .navbar.navbar-fixed-top
       .navbar-inner
         .container
+<<<<<<< HEAD
           %button.btn.btn-navbar{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
             %span.icon-bar
             %span.icon-bar
@@ -27,3 +28,11 @@
                   = link_to 'Sign up', new_user_registration_path     
       
     = yield
+=======
+  - if current_user
+    = link_to 'Add a new topic', new_topic_path
+  - else
+    = link_to 'Sign up', new_user_registration_path
+    = link_to 'Sign in', new_user_session_path
+  = yield
+>>>>>>> Slimmed down the top bar
