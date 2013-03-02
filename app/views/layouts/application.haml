@@ -30,11 +30,19 @@
                 = link_to 'Sign in', new_user_session_path
 
     .search-bar
-      .row-fluid
-        .container
+      .container
+        .row-fluid
           %input{"data-provide" => "typeahead", :type => "text"}/
 
-    .row-fluid
-      .container
+    .container
+      .row-fluid
 
         = yield
+
+    %footer
+      .container
+        .row-fluid
+          %h6
+            %a{:href => "#"}
+            LRNR
+

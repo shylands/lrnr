@@ -8,7 +8,11 @@ $light-grey: #EEE;
 $grey: #666;
 $black: #333;
 
-
+@mixin freight-heavy {
+	font-family: "freight-sans-pro",sans-serif; 
+	font-style: normal; 
+	font-weight: 700;
+}
 
 
 
@@ -23,7 +27,7 @@ body {
 
 .content-card {
   margin: 0 0 20px 0;
-  border-bottom:1px dashed #D0D0D0;
+  border-bottom:1px solid #ECECFB;
   padding: 0 0 20px 0;
 }
 
@@ -48,7 +52,17 @@ body {
 
 }
 
+.sub-page {
+  margin-top: 40px;
+  //input {
+  //  width: 500px;
+  //  color: red;
+  //}
+}
+
+
 .navbar-inner {background:#0F0F1F;}
+
 .navbar a.brand {font-size:18px; font-style: normal;
 	font-weight: 700; color:#CACAD8; color:#fff;}
 .navbar a.brand span {color:#747484; font-size:12px;}
@@ -56,19 +70,20 @@ body {
 .search-bar input {width:100%; border:1px solid #DBDBEA; height:67px; border-radius:0; font-size:48px; font-family: "freight-sans-pro",sans-serif;
 	font-style: normal;
 	font-weight: 700; color:#CACAD8; margin-top:38px; background: #fff image-url("search-icon.png") no-repeat 884px; padding:5px 10px;}
+.nav > li > a {color:#747484;}
+
+.vote-count {background:#FFFFBF; border-radius:5px; height:70px; width:70px; text-align:center; @include freight-heavy;}
 
 
 // Typography
 
 h1 {
-	font-family: "freight-sans-pro",sans-serif;
-	font-style: normal;
-	font-weight: 700;
+	@include freight-heavy;
 }
 
 h1.content-card-title {}
 
-h1.beta {font-size:18px; text-transform:uppercase;}
+h1.beta {font-size:18px; text-transform:uppercase; line-height:3em; padding: 20px 0 20px 0;}
 h2 {font-size:16px;}
 
 p {
@@ -77,3 +92,5 @@ p {
 	font-weight: 400;
 
 }
+
+footer {background:#F1F1F2; padding:20px 0 20px 0; margin-top:30px;}
