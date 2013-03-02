@@ -1,2 +1,45 @@
-%h1 User#show
-%p Find me in app/views/user/show.html.haml
+%h1 Hi #{@user.username.titleize}
+
+.tabbable
+  / Only required for left/right tabs
+  %ul.nav.nav-tabs
+    %li.active
+      %a{"data-toggle" => "tab", :href => "#tab1"} Learning Queue
+    %li
+      %a{"data-toggle" => "tab", :href => "#tab2"} Learnt
+  .tab-content
+    #tab1.tab-pane.active
+      %div 
+        .posts.content-list
+          - @posts.each do |post|
+            .post.content-card
+              %h1.content-card-title
+                = link_to post.title, post.url
+                %p.content-card-subtext
+                  From
+                  = link_to  "Website Url", "#"
+                  by
+                  = post.user.username
+                  = time_ago_in_words(post.created_at)
+                  ago
+                .content-card-topics
+                  = link_to post.topic.name, topic_path(post.topic), :class => 'content-card-tag'
+                  - if current_user == post.user
+                    %br/
+                    = link_to 'Edit', edit_post_path(post)
+                    = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+            .post.actions
+              .vote-count
+                = post.votes.size
+              .vote
+                - if current_user
+                  - vote = current_user.votes.where(:post_id => post.id).exists?
+                  - if vote
+                    = link_to 'Remove vote', post_vote_path(post, vote), :method => :delete
+                  -else
+                    = link_to 'Vote Up', post_vote_path(post, vote), :method => :post
+    #tab2.tab-pane
+      %div
+        .posts.content-list
+          - @posts.each do |post|
+            %p= post.title
