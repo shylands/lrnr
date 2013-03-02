@@ -5,6 +5,8 @@ Grow::Application.routes.draw do
     delete 'vote' => 'votes#destroy', :as => :vote
   end
 
+  resources :topics
+
   devise_for :users
 
   match '/users/:username' => 'users#show', :as => :user_profile
