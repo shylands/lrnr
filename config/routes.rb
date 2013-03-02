@@ -1,5 +1,7 @@
 Grow::Application.routes.draw do
 
+  match '/about' => "site#about", :as => :about
+
   resources :posts do
     post 'vote' => 'votes#create', :as => :vote
     delete 'vote' => 'votes#destroy', :as => :vote
