@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 = simple_form_for @post, :html => {:class => 'form-horizontal' } do |f|
-=======
-= simple_form_for @post, :html => {:class => 'form-horizontal' }, :url => posts_path(@topic) do |f|
->>>>>>> Vote
-=======
-= simple_form_for @post, :html => {:class => 'form-horizontal' } do |f|
->>>>>>> Merge
   - if @post.errors.any?
     #error_explanation
       %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
