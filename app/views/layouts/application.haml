@@ -17,10 +17,13 @@
           .nav-collapse.collapse
             %ul.nav.pull-right
               %li.active
-                %a{:href => "#"} Login
-    - if current_user
-      = link_to 'Add a new topic', new_topic_path
-    - else
-      = link_to 'Sign up', new_user_registration_path
-      = link_to 'Sign in', new_user_session_path
+              - if current_user
+                %li
+                  = link_to 'Add a new topic', new_topic_path
+              -else
+                %li.pull-right
+                  = link_to 'Sign in', new_user_session_path
+                  or 
+                  = link_to 'Sign up', new_user_registration_path     
+      
     = yield
