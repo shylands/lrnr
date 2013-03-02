@@ -4,6 +4,9 @@
     %title Grow
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
+    %script{:src => "//use.typekit.net/oge2mkq.js", :type => "text/javascript"}
+    :javascript
+      try{Typekit.load();}catch(e){}
     = csrf_meta_tags
   %body
     .navbar.navbar-static-top.navbar-inverse

@@ -4,7 +4,13 @@
 // Colours
 //--------------------------------
 
-$light-grey: #CCC;
+$light-grey: #EEE;
+$grey: #666;
+$black: #333;
+
+
+
+
 
 * {
   box-sizing: border-box;
@@ -15,12 +21,46 @@ body {
   line-height: 1.5em;
 }
 
+.content-card {
+  margin: 0 0 20px 0;
+  border-bottom:1px dashed #D0D0D0;
+  padding: 0 0 20px 0;
+}
+
 .content-card-title {
   font-size: 24px;
+  margin: 0;
+  a {
+    color: $black;
+  }
+}
+
+.content-card-subtext {
+  margin: 0;
 }
 
 
 .content-card-tag {
   background: $light-grey;
+  color: $grey;
+  padding: 4px 6px;
+  font-size: 13px;
+  font-weight: bold;
 
+}
+
+
+
+// Typography
+
+h1 {
+	font-family: "freight-sans-pro",sans-serif;
+	font-style: normal;
+	font-weight: 700;
+}
+
+p {
+	font-family: "freight-sans-pro",sans-serif;
+	font-style: normal;
+	font-weight: 400;
 }
