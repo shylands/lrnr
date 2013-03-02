@@ -28,8 +28,6 @@ class PostsController < ApplicationController
   # GET /posts/new.json
   def new
     @post = current_user.posts.build
-    @topic = Topic.find(params[:topic_id])
-    @post.topic = @topic
 
     respond_to do |format|
       format.html # new.html.erb
@@ -49,7 +47,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to topic_path(@post.topic), notice: 'Post was successfully created.' }
+        format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }

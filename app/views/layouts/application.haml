@@ -12,7 +12,9 @@
           %ul.pull-right.nav
             - if current_user
               %li
-                = link_to 'Add a new topic', new_topic_path
+                = image_tag avatar_url(current_user)
+              %li
+                = link_to 'Add a new post', new_post_path
               %li
                 = link_to 'Sign out', destroy_user_session_path
             - else

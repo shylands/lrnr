@@ -1,8 +1,7 @@
 Grow::Application.routes.draw do
 
-  resources :topics do
-    resources :posts
-  end
+  resources :topics
+  resources :posts
 
 
   devise_for :users
