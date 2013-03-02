@@ -69,7 +69,7 @@ h1 {
 
 h1.content-card-title {}
 
-h1.beta {font-size:18px; text-transform:uppercase;}
+h1.beta {font-size:18px; text-transform:uppercase; line-height:3em; padding: 20px 0 20px 0;}
 h2 {font-size:16px;}
 
 p {
@@ -78,3 +78,5 @@ p {
 	font-weight: 400;
 
 }
+
+footer {background:#F1F1F2; padding:20px 0 20px 0; margin-top:30px;}
