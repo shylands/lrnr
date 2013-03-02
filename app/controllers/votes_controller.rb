@@ -11,7 +11,8 @@ class VotesController < ApplicationController
   end
 
   def destroy
-    Vote.where(user_id: current_user.id, post_id: params[:post_id]).destroy_all
+    post = Post.find(params[:post_id])
+    Vote.where(user_id: current_user.id, post_id: post.id).destroy_all
 
     respond_to do |format|
       format.json { head :ok }
