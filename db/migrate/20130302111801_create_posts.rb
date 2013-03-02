@@ -3,8 +3,8 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :title
       t.string :url
-      t.reference :user
-      t.reference :topic
+      t.references :user
+      t.references :topic
 
       t.timestamps
     end
