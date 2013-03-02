@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+
+  before_filter :auth, :except => [:index, :show]
+
   # GET /posts
   # GET /posts.json
   def index
@@ -78,6 +81,14 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url }
       format.json { head :no_content }
+    end
+  end
+
+  private
+
+  def auth
+    unless current_user
+      redirect_to posts_path, notice: 'You need to be logged in to do that'
     end
   end
 end
