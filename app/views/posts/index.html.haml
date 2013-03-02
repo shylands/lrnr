@@ -29,6 +29,6 @@
           .content-card-topics
             = link_to post.topic.name, topic_path(post.topic), :class => 'content-card-tag'
             - if current_user == post.user
-          %br
-          = link_to 'Edit', edit_post_path(post)
-          = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+              %br/
+              = link_to 'Edit', edit_post_path(post)
+              = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
