@@ -1,10 +1,16 @@
 Grow::Application.routes.draw do
 
+<<<<<<< HEAD
   
   
   resources :topics
   resources :posts
-
+=======
+  resources :posts do
+    post 'vote' => 'votes#create', :as => :vote
+    delete 'vote' => 'votes#destroy', :as => :vote
+  end
+>>>>>>> Vote
 
   devise_for :users
 
