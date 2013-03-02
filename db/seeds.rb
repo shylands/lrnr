@@ -10,7 +10,7 @@ users = User.create([
     {username: 'tommy', email: 'hi@tommyp.org', password: 'password', password_confirmation: 'password'},
     {username: 'shylands', email: 'shylands@rumblelabs.com', password: 'password', password_confirmation: 'password'},
     {username: 'andy', email: 'andy@grow.com', password: 'password', password_confirmation: 'password'},
-    {username: 'jonny', email: 'jonny@grow.com', password: 'password', password_confirmation: 'password'}
+    {username: 'johnny', email: 'jonathan_alban@me.com', password: 'password', password_confirmation: 'password'}
   ])
 
 Topic.create(name: 'Web Design', user: User.first)
