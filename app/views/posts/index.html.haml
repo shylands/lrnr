@@ -11,7 +11,8 @@
         by 
         = post.user.username
         = time_ago_in_words(post.created_at)
+        ago
         - if current_user == post.user
           %br
-          = link_to 'Edit', edit_post_path(post)
+          = link_to 'Edit', edit_topic_post_path(@topic, post)
           = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' } 

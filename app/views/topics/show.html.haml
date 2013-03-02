@@ -3,6 +3,12 @@
   = @topic.name
 
 .posts
+  - if @topic.posts.empty?
+    %p
+      There's nothing here :(
+      %br/
+      = "Why not share something you know about #{@topic.name.downcase}?"
+
   - @topic.posts.each do |post|
     .post
       %p
