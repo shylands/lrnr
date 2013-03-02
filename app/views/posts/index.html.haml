@@ -13,10 +13,10 @@
         = post.user.username
         = time_ago_in_words(post.created_at)
         ago
-        - if current_user == post.user
       .content-card-topics
-        in
-        = link_to post.topic.name, topic_path(post.topic)
+        = link_to post.topic.name, topic_path(post.topic), :class => 'content-card-tag'
+        - if current_user == post.user
+
 
 
 
