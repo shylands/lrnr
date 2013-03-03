@@ -7,6 +7,13 @@
 $light-grey: #EEE;
 $grey: #666;
 $black: #333;
+$button-green: #BEDE02;
+$button-green-shadow: #A1BC05;
+$button-green-hover: #D4F807;
+$button-green-active: $button-green-shadow;
+$white: #fff;
+$vote-yellow: #FFFFBF;
+$vote-yellow-border: #EBEBB2;
 
 @mixin freight-heavy {
 	font-family: "freight-sans-pro",sans-serif;
@@ -58,12 +65,17 @@ body {
 
 .about-strapline {
   width: 100%;
+  height: 80px;
+  line-height: 80px;
   font-size: 16px;
+  border-bottom:1px solid #ECECFB;
 }
 
 .strapline {
   font-weight: 200;
   font-size: 28px;
+  line-height: 76px;
+  margin: 0;
   a {
     text-decoration: underline;
   }
@@ -99,11 +111,59 @@ input::-webkit-input-placeholder {color:#E2E2F3;}
 
 .nav > li > a {color:#747484;}
 
-.vote-count {background:#FFFFBF; border-radius:5px; height:70px; width:70px; text-align:center; line-height: 17px;}
-.vote-count { @include freight-heavy; padding-top:11px; font-size:28px;}
-.vote-btn a {font-size:12px; @include freight-heavy; background:#CEF000; -webkit-box-shadow: 0px 2px 0px rgba(212, 242, 0, 1);
--moz-box-shadow:    0px 2px 0px rgba(212, 242, 0, 1);
-box-shadow:         0px 2px 0px rgba(212, 242, 0, 1); padding:3px 16px; border-radius:3px; color:#0E0E1F;}
+.vote-count {  }
+
+.vote-count {
+  @include freight-heavy;
+  height:70px;
+  width:70px;
+  background: $vote-yellow;
+  border-radius:5px;
+  font-size:28px;
+  padding: 5px 5px 7px 5px;
+  height: auto;
+  text-align:center;
+  border:1px solid $vote-yellow-border;
+  .vote-count-number {
+    height: 30px;
+    line-height: 20px;
+    display: block;
+  }
+}
+.vote-btn {
+  position: relative;
+  height: 20px;
+  border-radius:3px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size:12px;
+  line-height: 20px;
+  color: $black;
+  @include freight-heavy;
+  background: $button-green;
+  @include box-shadow(0 2px 0px $button-green-shadow);
+  a {
+    color:red;
+    text-shadow: 0 1px 0px rgba(255,255,255,0.2);
+  }
+  &:hover {
+    text-decoration: none;
+    background-color: $button-green-hover;
+    @include box-shadow(0 2px 0px $button-green);
+
+  }
+  &:active {
+    background-color: $button-green-active;
+    bottom: -2px;
+    color: $white;
+    @include box-shadow(0 0 0px $button-green-shadow);
+    &:before {
+      bottom: -2px;
+    }
+  }
+}
+
 
 // Typography
 

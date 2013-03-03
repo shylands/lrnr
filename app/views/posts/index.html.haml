@@ -20,17 +20,17 @@
               .span2
                 .post.actions
                 .vote-count
-                  %p
+                  %span.vote-count-number
                     = post.votes.size
-                  .vote-btn
-                    %a{:href => "#"} LRNT
-                .vote
-                  - if current_user
-                    - vote = current_user.votes.where(:post_id => post.id).exists?
-                    - if vote
-                      = link_to 'Remove vote', post_vote_path(post, vote), :method => :delete
-                    -else
-                      = link_to 'Vote Up', post_vote_path(post, vote), :method => :post
+                  .lrnt-button
+                    - if current_user
+                      - vote = current_user.votes.where(:post_id => post.id).exists?
+                      - if vote
+                        = link_to 'REMOVE', post_vote_path(post, vote), :method => :delete, :class => "vote-btn"
+                      -else
+                        = link_to 'LRNT', post_vote_path(post, vote), :method => :post, :class => "vote-btn"
+
+
               .span10
                 %h1.content-card-title
                   = link_to post.title, post.url
