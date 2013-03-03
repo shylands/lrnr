@@ -20,7 +20,7 @@
         = link_to post.title, post.url
       %p.content-card-subtext
         From
-        = link_to get_sitename(post.url), "#"
+        = link_to get_sitename(post.url), post.url
         by
         = post.user.username
         = time_ago_in_words(post.created_at)
