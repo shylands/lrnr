@@ -144,7 +144,6 @@ input::-webkit-input-placeholder {color:#E2E2F3;}
   background: $button-green;
   @include box-shadow(0 2px 0px $button-green-shadow);
   a {
-    color:red;
     text-shadow: 0 1px 0px rgba(255,255,255,0.2);
   }
   &:hover {
