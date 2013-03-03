@@ -43,8 +43,9 @@ body {
 }
 
 .content-card-title {
-  font-size: 24px;
-  margin: 0;
+line-height: 1.3em;
+font-size: 24px;
+margin: 0 0 10px 0;
   a {
     color: $black;
   }
@@ -159,8 +160,8 @@ input::-webkit-input-placeholder {color:#E2E2F3;}
 .submit-btn a {color:#1b1b1b !important; text-shadow:0 !important; }
 .submit-btn a:hover {color:#535364 !important;}
 
-.save a {font-size:11px; padding:4px 5px 4px 20px; border-radius:3px; color:#333; background: image-url("pin-icon.png") no-repeat left; @include freight-heavy; text-transform:uppercase;}
-.save a:hover {background:$light-grey image-url("pin-icon.png") no-repeat left; text-decoration:none;}
+.save a {font-size:11px; padding:4px 17px 4px 20px; border-radius:3px; color:#333; background: image-url("pin-icon.png") no-repeat 3px 6px; @include freight-heavy; text-transform:uppercase;}
+.save a:hover {background:$light-grey image-url("pin-icon.png") no-repeat 3px 6px; text-decoration:none;}
 
 .nav > li > a {color:#747484;}
 .navbar-inner img {width:28px; height:28px; border-radius:3px; border:1px solid #535363;}
