@@ -11,7 +11,12 @@ users = User.create([
     {username: 'shylands', email: 'shylands@rumblelabs.com', password: 'password', password_confirmation: 'password'},
     {username: 'andy', email: 'andy@grow.com', password: 'password', password_confirmation: 'password'},
     {username: 'johnny', email: 'jonathan_alban@me.com', password: 'password', password_confirmation: 'password'},
-    {username: 'matt', email: 'mwc0000@gmail.com', password: 'password', password_confirmation: 'password'}
+    {username: 'matt', email: 'mwc0000@gmail.com', password: 'password', password_confirmation: 'password'},
+    {username: 'hamstarr', email: 'shamilton@rumblelabs.com', password: 'password', password_confirmation: 'password'},
+    {username: 'davidjrice', email: 'drice@rumblelabs.com', password: 'password', password_confirmation: 'password'},
+    {username: 'wakeuphate', email: 'mleetch@rumblelabs.com', password: 'password', password_confirmation: 'password'},
+    {username: 'terminaldude', email: 'jrowe@rumblelabs.com', password: 'password', password_confirmation: 'password'},
+    {username: 'rory', email: 'rorymccawl@gmail.com', password: 'password', password_confirmation: 'password'}
   ])
 
 Topic.create(name: 'Web Design', user: User.first)

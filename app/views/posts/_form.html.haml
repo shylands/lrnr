@@ -10,5 +10,12 @@
     = f.input :title
   .field
     = f.input :url
+  .field
+    = f.input :original, :as => :boolean
+  .field
+    = f.input :agreement, :as => :boolean, :label => ""
+    %p iuhoug
+
+
   .actions
     = f.submit 'Submit'
