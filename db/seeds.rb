@@ -22,7 +22,7 @@ users = User.create([
 
 tags = Tag.create([
   {title: "tag1"},
-  {title: "tag2"}
+  {title: "tag2"},
   {title: "tag3"}
 ])
 

@@ -24,7 +24,7 @@
         From
         = link_to get_sitename(post.url), post.url
         by
-        = post.user.username
+        = link_to post.user.username, user_profile_path(post.user.username)
         = time_ago_in_words(post.created_at)
         ago
       .content-card-topics
