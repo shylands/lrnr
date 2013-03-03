@@ -11,7 +11,8 @@
   .container
     .span8
       %h1.beta
-        Results
+        Results for: 
+        = params[:q]
 
       .posts.content-list
         - @posts.each do |post|

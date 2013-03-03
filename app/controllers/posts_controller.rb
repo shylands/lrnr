@@ -26,11 +26,11 @@ class PostsController < ApplicationController
       format.json { render json: @post }
     end
   end
-
+ 
   # GET /search
   # GET /search.json
   def search
-    @posts = Post.all # TODO: which contains tag matching :q
+    @posts = Post.tagged_with(params[:q])
     
     respond_to do |format|
       format.html # search.html.erb
