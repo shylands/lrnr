@@ -67,3 +67,36 @@ post11.save
 post12 = Post.new(title: 'Caching', url: 'http://google.com', user: User.all.sample)
 post12.tag_list = 'html5, caching, advanced'
 post12.save
+
+post13 = Post.new(title: 'http://rumblelabs.com/blog/how-to-go-from-being-a-rails-newb-to-being-a-rails-semi-pro', url: 'http://rumblelabs.com/blog/how-to-go-from-being-a-rails-newb-to-being-a-rails-semi-pro', user: User.all.sample)
+post13.tag_list = 'beginner, programming, rails, web development, back-end'
+post13.save
+
+post14 = Post.new(title: 'Roasted Vegetable and Goat Cheese Terrine', url: 'http://www.foodnetwork.com/recipes/emeril-lagasse/roasted-vegetable-and-goat-cheese-terrine-recipe/index.html', user: User.all.sample)
+post14.tag_list = 'intermediate, goats cheese, recipes, cooking, food'
+post14.save
+
+post15 = Post.new(title: 'CAE Practice Tests', url: 'http://www.flo-joe.co.uk/cae/students/tests/pt1index.htm', user: User.all.sample)
+post15.tag_list = 'advanced, cae, english'
+post15.save
+
+post16 = Post.new(title: 'What Is A Business Model?', url: 'http://www.slideshare.net/Alex.Osterwalder/what-is-a-business-model', user: User.all.sample)
+post16.tag_list = 'beginner, entrepreneur, networking, business modelling, business'
+post16.save
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
