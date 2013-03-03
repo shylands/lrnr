@@ -43,14 +43,12 @@
                   = time_ago_in_words(post.created_at)
                   ago
                 .content-card-topics
-                  %a.content-card-tag{:href => "/topics/web-design"} Web Design
-                  %a.content-card-tag{:href => "/topics/web-design"} Cooking
-                  %a.content-card-tag{:href => "/topics/web-design"} Spanish
-                  -# post.tags.each do TODO THIS THING @john
-                    %br/
-                    = link_to 'Edit', edit_post_path(post)
-                    = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-                    - if current_user == post.user
+                - post.tags.each do |tag|
+                  %a.content-card-tag{:href => "/topics/#{tag.title}"}= tag.title
+                %br/
+                - if current_user == post.user
+                  = link_to 'Edit', edit_post_path(post)
+                  = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 
     .span4
