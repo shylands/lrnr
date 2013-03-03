@@ -20,7 +20,7 @@
           %ul.pull-right.nav
             - if current_user
               %li.dropdown
-                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}          
+                %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
                   = image_tag(avatar_url(current_user))
                   %ul.dropdown-menu
                     %li
@@ -28,7 +28,7 @@
                     %li
                       = link_to 'Sign out', destroy_user_session_path, :method => :delete
                 %li.submit-btn
-                  = link_to 'Submit', new_post_path              
+                  = link_to 'Submit', new_post_path
             - else
               %li.signin-btn
                 = link_to 'Sign in', new_user_session_path
@@ -49,6 +49,6 @@
       .container
         .row-fluid
           %h6
-            %a{:href => "#"}
-            LRNR
+            %a{:href => "/"}
+              LRNR
 
