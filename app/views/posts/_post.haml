@@ -3,30 +3,32 @@
     .span2
       .post.actions
       .vote-count
-        %p
+        %span.vote-count-number
           = post.votes.size
-        .vote-btn
-          %a{:href => "#"} LRNT
-      .vote
-        - if current_user
-          - vote = current_user.votes.where(:post_id => post.id).exists?
-          - if vote
-            = link_to 'Remove vote', post_vote_path(post, vote), :method => :delete
-          -else
-            = link_to 'Vote Up', post_vote_path(post, vote), :method => :post
+        .lrnt-button
+          - if current_user
+            - vote = current_user.votes.where(:post_id => post.id).exists?
+            - if vote
+              = link_to 'REMOVE', post_vote_path(post, vote), :method => :delete, :class => "vote-btn"
+            -else
+              = link_to 'LRNT', post_vote_path(post, vote), :method => :post, :class => "vote-btn"
+      .save
+        = link_to 'Later', post_bookmark_path(post), :remote => true, :method => :post
+
     .span10
       %h1.content-card-title
         = link_to post.title, post.url
       %p.content-card-subtext
         From
-        = link_to  "Website Url", "#"
+        = link_to get_sitename(post.url), "#"
         by
         = post.user.username
         = time_ago_in_words(post.created_at)
         ago
       .content-card-topics
-        -# post.tags.each do TODO THIS THING @john
-        - if current_user == post.user
-          %br/
-          = link_to 'Edit', edit_post_path(post)
-          = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      - post.tags.each do |tag|
+        %a.content-card-tag{:href => "/topics/#{tag.title}"}= tag.title
+      %br/
+      - if current_user == post.user
+        = link_to 'Edit', edit_post_path(post)
+        = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
