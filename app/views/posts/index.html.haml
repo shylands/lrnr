@@ -1,46 +1,60 @@
-.span8
-  %h1.beta
-    Popular this week
+.row-fluid
+  .container
+    .about-strapline
+      %h1.strapline
+        %strong
+          Lrnr
+        helps you take the initiative and learn what you really want to.
+        = link_to  "Find out how", "/about"
 
-  .posts.content-list
-    - @posts.each do |post|
-      .post.content-card
-        .row-fluid
-          .span2
-            .post.actions
-            .vote-count
-              = post.votes.size
-            .vote
-              - if current_user
-                - vote = current_user.votes.where(:post_id => post.id).exists?
-                - if vote
-                  = link_to 'Remove vote', post_vote_path(post, vote), :method => :delete
-                -else
-                  = link_to 'Vote Up', post_vote_path(post, vote), :method => :post
-          .span10
-            %h1.content-card-title
-              = link_to post.title, post.url
-            %p.content-card-subtext
-              From
-              = link_to  "Website Url", "#"
-              by
-              = post.user.username
-              = time_ago_in_words(post.created_at)
-              ago
-            .save
-              = link_to 'Save for Later', post_bookmark_path(post), :remote => true, :method => :post
-            .content-card-topics
-              -# post.tags.each do TODO THIS THING @john
-              - if current_user == post.user
-                %br/
-                = link_to 'Edit', edit_post_path(post)
-                = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+.row-fluid
+  .container
+    .span8
+      %h1.beta
+        Popular this week
 
-      
-.span4
-  %h1.beta
-    Topics
-    .well
-      %a.content-card-tag{:href => "/topics/web-design"} Web Design
-      %a.content-card-tag{:href => "/topics/web-design"} Cooking
-      %a.content-card-tag{:href => "/topics/web-design"} Spanish
+      .posts.content-list
+        - @posts.each do |post|
+          .post.content-card
+            .row-fluid
+              .span2
+                .post.actions
+                .vote-count
+                  %p
+                    = post.votes.size
+                  .vote-btn
+                    %a{:href => "#"} LRNT
+                .vote
+                  - if current_user
+                    - vote = current_user.votes.where(:post_id => post.id).exists?
+                    - if vote
+                      = link_to 'Remove vote', post_vote_path(post, vote), :method => :delete
+                    -else
+                      = link_to 'Vote Up', post_vote_path(post, vote), :method => :post
+              .span10
+                %h1.content-card-title
+                  = link_to post.title, post.url
+                %p.content-card-subtext
+                  From
+                  = link_to  "Website Url", "#"
+                  by
+                  = post.user.username
+                  = time_ago_in_words(post.created_at)
+                  ago
+                .save
+                  = link_to 'Save for Later', post_bookmark_path(post), :remote => true, :method => :post
+                .content-card-topics
+                  -# post.tags.each do TODO THIS THING @john
+                  - if current_user == post.user
+                    %br/
+                    = link_to 'Edit', edit_post_path(post)
+                    = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+
+    .span4
+      %h1.beta
+        Topics
+        .well
+          %a.content-card-tag{:href => "/topics/web-design"} Web Design
+          %a.content-card-tag{:href => "/topics/web-design"} Cooking
+          %a.content-card-tag{:href => "/topics/web-design"} Spanish

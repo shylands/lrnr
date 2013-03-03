@@ -9,8 +9,8 @@ $grey: #666;
 $black: #333;
 
 @mixin freight-heavy {
-	font-family: "freight-sans-pro",sans-serif; 
-	font-style: normal; 
+	font-family: "freight-sans-pro",sans-serif;
+	font-style: normal;
 	font-weight: 700;
 }
 
@@ -24,6 +24,7 @@ body {
   font-size: 16px;
   line-height: 1.5em;
 }
+
 
 .content-card {
   margin: 0 0 20px 0;
@@ -52,12 +53,33 @@ body {
 
 }
 
+.about-strapline {
+  width: 100%;
+  font-size: 16px;
+}
+
+.strapline {
+  font-weight: 200;
+  font-size: 28px;
+  a {
+    text-decoration: underline;
+  }
+}
+
+
+
 .sub-page {
   margin-top: 40px;
   //input {
   //  width: 500px;
   //  color: red;
   //}
+}
+
+.add-content {
+  label {
+    width: 100%;
+  }
 }
 
 
@@ -67,13 +89,18 @@ body {
 	font-weight: 700; color:#CACAD8; color:#fff;}
 .navbar a.brand span {color:#747484; font-size:12px;}
 .search-bar {background:#EAFAFF; height:140px;}
-.search-bar input {width:100%; border:1px solid #DBDBEA; height:67px; border-radius:0; font-size:48px; font-family: "freight-sans-pro",sans-serif;
-	font-style: normal;
-	font-weight: 700; color:#CACAD8; margin-top:38px; background: #fff image-url("search-icon.png") no-repeat 884px; padding:5px 10px;}
+.search-bar input {width:100%; border:1px solid #DBDBEA; height:67px; border-radius:0; font-size:30px; font-family: "freight-sans-pro",sans-serif;
+	font-style: normal; line-height:2em;
+	font-weight: 700; color:#E2E2F3; margin-top:38px; background: #fff image-url("search-icon.png") no-repeat 884px; padding:20px;}
+input::-webkit-input-placeholder {color:#E2E2F3;}
+
 .nav > li > a {color:#747484;}
 
-.vote-count {background:#FFFFBF; border-radius:5px; height:70px; width:70px; text-align:center; @include freight-heavy;}
-
+.vote-count {background:#FFFFBF; border-radius:5px; height:70px; width:70px; text-align:center; line-height: 17px;}
+.vote-count { @include freight-heavy; padding-top:11px; font-size:28px;}
+.vote-btn a {font-size:12px; @include freight-heavy; background:#CEF000; -webkit-box-shadow: 0px 2px 0px rgba(212, 242, 0, 1);
+-moz-box-shadow:    0px 2px 0px rgba(212, 242, 0, 1);
+box-shadow:         0px 2px 0px rgba(212, 242, 0, 1); padding:3px 16px; border-radius:3px; color:#0E0E1F;}
 
 // Typography
 
