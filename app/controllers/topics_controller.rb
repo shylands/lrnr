@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
 
-  before_filter :auth, :except => [:index, :show]
+  before_filter :auth, :only => [:index, :show]
 
   # GET /topics
   # GET /topics.json
