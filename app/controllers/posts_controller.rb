@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   skip_before_filter :authenticate_user!, :only => [:index, :show, :search]
-  before_filter :auth, :except => [:index, :show]
+  before_filter :auth, :except => [:index, :show, :search]
 
 
   # GET /posts
@@ -26,12 +26,12 @@ class PostsController < ApplicationController
   #     format.json { render json: @post }
   #   end
   # end
- 
+
   # GET /search
   # GET /search.json
   def search
     @posts = Post.tagged_with(params[:q])
-    
+
     respond_to do |format|
       format.html # search.html.erb
       format.json { render json: @posts }
@@ -57,14 +57,14 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    
+
     @post = Post.new(params[:post])
     @post.user = current_user
-    
+
     # tags.each do |tag|
     #   @post.tags.new({:title => tag})
     # end
-    
+
     respond_to do |format|
       if @post.save
         format.html { redirect_to root_path, notice: 'Post was successfully created.' }
@@ -115,5 +115,5 @@ class PostsController < ApplicationController
       end
     end
   end
-  
+
 end
