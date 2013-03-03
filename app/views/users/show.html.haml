@@ -1,29 +1,23 @@
 .row-fluid
-  .container
+  
+  //Left side
+  %div.span8
+    
     %h1.beta Hi #{@user.username.titleize}
 
-.row-fluid
-  .container
-    .span8
-      .tabbable
-      / Only required for left/right tabs
-      %ul.nav.nav-tabs
-        %li.active
-          %a{"data-toggle" => "tab", :href => "#tab1"} Learning Queue
-        %li
-          %a{"data-toggle" => "tab", :href => "#tab2"} Learnt
-      .tab-content
-        #tab1.tab-pane.active
-          %div
-            .posts.content-list
-              - @queued_posts.each do |post|
-                = render post
-        #tab2.tab-pane
-          %div
-            .posts.content-list
-              - @learnt_posts.each do |post|
-                = render post
     
-    .span4
-      %h1.beta Have something to share?
-      %p Do you know of something that others could learnt from? Feel free to get involved and contribute your links.
+    - @user.posts.each do |post|
+      = render post
+    
+
+
+
+
+  %div.span4
+
+    %h1.beta Have something to share?
+    %p Do you know of something that others could learnt from? Feel free to get involved and contribute your links.
+    %div.contribute-btn
+      = link_to 'CONTRIBUTE', new_post_path
+
+
