@@ -1,9 +1,11 @@
-%h1.beta Hi #{@user.username.titleize}
+%h1.beta 
+  Hi 
+  = current_user.username
 
 .container-fluid
   .row-fluid
     .span8
       %div
         .posts.content-list
-          - @learnt_posts.each do |post|
-            = render post
+          - current_user.bookmarks.each do |bookmark|
+            = render :partial => 'posts/post', :locals => {:post => bookmark.post}
