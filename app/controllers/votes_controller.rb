@@ -4,8 +4,7 @@ class VotesController < ApplicationController
 
   def create
     @post = Post.find(params[:post_id])
-    Vote.where(post_id: @post.id, user_id: current_user.id).first_or_create
-    @vote = Vote.where(user_id: current_user.id, post_id: @post.id)
+    @vote = Vote.where(post_id: @post.id, user_id: current_user.id).first_or_create
 
     respond_to do |format|
       format.js
