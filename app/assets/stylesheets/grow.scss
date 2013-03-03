@@ -45,11 +45,14 @@ body {
 }
 
 .content-card-tag {
+  font-family: "freight-sans-pro",sans-serif;
   background: $light-grey;
   color: $grey;
   padding: 4px 6px;
   font-size: 13px;
   font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 2px;
 
 }
 
@@ -87,7 +90,7 @@ body {
 
 .navbar a.brand {font-size:18px; font-style: normal;
 	font-weight: 700; color:#CACAD8; color:#fff;}
-.navbar a.brand span {color:#747484; font-size:12px;}
+.navbar a.brand span {color:#747484; font-size:12px; margin-left: 5px;}
 .search-bar {background:#EAFAFF; height:140px;}
 .search-bar input {width:100%; border:1px solid #DBDBEA; height:67px; border-radius:0; font-size:30px; font-family: "freight-sans-pro",sans-serif;
 	font-style: normal; line-height:2em;

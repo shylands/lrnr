@@ -42,17 +42,20 @@
                   = time_ago_in_words(post.created_at)
                   ago
                 .content-card-topics
+                  %a.content-card-tag{:href => "/topics/web-design"} Web Design
+                  %a.content-card-tag{:href => "/topics/web-design"} Cooking
+                  %a.content-card-tag{:href => "/topics/web-design"} Spanish
                   -# post.tags.each do TODO THIS THING @john
-                  - if current_user == post.user
                     %br/
                     = link_to 'Edit', edit_post_path(post)
                     = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+                    - if current_user == post.user
 
 
     .span4
       %h1.beta
         Topics
-        .well
-          %a.content-card-tag{:href => "/topics/web-design"} Web Design
-          %a.content-card-tag{:href => "/topics/web-design"} Cooking
-          %a.content-card-tag{:href => "/topics/web-design"} Spanish
+      .well
+        %a.content-card-tag{:href => "/topics/web-design"} Web Design
+        %a.content-card-tag{:href => "/topics/web-design"} Cooking
+        %a.content-card-tag{:href => "/topics/web-design"} Spanish
