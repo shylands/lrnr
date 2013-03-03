@@ -39,14 +39,14 @@ body {
 .content-card {
   margin: 0 0 20px 0;
   border-bottom:1px solid $border-grey;
-  padding: 0 0 20px 0;
+  padding: 0;
   &:last-child{border-bottom: none;}
 }
 
 .content-card-title {
 line-height: 1.3em;
 font-size: 24px;
-margin: 0 0 10px 0;
+margin: 0;
   a {
     color: $black;
   }
