@@ -29,6 +29,8 @@
                         = link_to 'REMOVE', post_vote_path(post, vote), :method => :delete, :class => "vote-btn"
                       -else
                         = link_to 'LRNT', post_vote_path(post, vote), :method => :post, :class => "vote-btn"
+                    - else
+                      = link_to 'LRNT', new_user_session_path, :method => :post, :class => "vote-btn"
                 .save
                   = link_to 'Later', post_bookmark_path(post), :remote => true, :method => :post
 
