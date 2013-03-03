@@ -10,9 +10,7 @@
 .row-fluid
   .container
     .span8
-      %h1.beta
-        Results for: 
-        = params[:q]
+      %h1.beta= "#{pluralize(@posts.length, "result")} matching '#{params[:q]}'"
 
       .posts.content-list
         - @posts.each do |post|
