@@ -108,8 +108,26 @@ body {
 	font-style: normal; line-height:2em;
 	font-weight: 700; color:#E2E2F3; margin-top:38px; background: #fff image-url("search-icon.png") no-repeat 884px; padding:20px;}
 input::-webkit-input-placeholder {color:#E2E2F3;}
+.submit-btn {
+	background: $vote-yellow;
+  border-radius:5px;
+  font-size:15px;
+  text-transform:uppercase;
+  padding: 3px 5px 3px 5px;
+  line-height: 0;
+  color:#1b1b1b;
+  @include freight-heavy;
+   text-shadow:0;
+   letter-spacing: 1px;
+   margin-top:11px;
+}
+
+.submit-btn a {color:#1b1b1b !important; text-shadow:0 !important;}
+.submit-btn a:hover {color:#535364 !important;}
 
 .nav > li > a {color:#747484;}
+
+.navbar-inner img {width:28px; height:28px; border-radius:3px; border:1px solid #535363;}
 
 .vote-count {  }
 

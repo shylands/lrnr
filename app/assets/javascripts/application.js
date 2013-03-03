@@ -13,3 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-tab
+//= require bootstrap-dropdown
+//= require bootstrap-modal
