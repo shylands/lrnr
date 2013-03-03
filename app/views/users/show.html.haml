@@ -1,14 +1,17 @@
 .row-fluid
-  
+
   //Left side
   %div.span8
-    
-    %h1.beta Hi #{@user.username.titleize}
 
-    
+    %h1.beta #{@user.username.titleize}
+    %br/
+    = current_user.website
+    %br/
+    = current_user.twitter
+
     - @user.posts.each do |post|
       = render post
-    
+
 
 
 

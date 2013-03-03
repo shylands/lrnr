@@ -7,16 +7,16 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 users = User.create([
-    {username: 'tommy', email: 'hi@tommyp.org', password: 'password', password_confirmation: 'password'},
-    {username: 'shylands', email: 'shylands@rumblelabs.com', password: 'password', password_confirmation: 'password'},
-    {username: 'andy', email: 'andy@grow.com', password: 'password', password_confirmation: 'password'},
-    {username: 'johnny', email: 'jonathan_alban@me.com', password: 'password', password_confirmation: 'password'},
-    {username: 'matt', email: 'mwc0000@gmail.com', password: 'password', password_confirmation: 'password'},
-    {username: 'hamstarr', email: 'shamilton@rumblelabs.com', password: 'password', password_confirmation: 'password'},
-    {username: 'davidjrice', email: 'drice@rumblelabs.com', password: 'password', password_confirmation: 'password'},
-    {username: 'wakeuphate', email: 'mleetch@rumblelabs.com', password: 'password', password_confirmation: 'password'},
-    {username: 'terminaldude', email: 'jrowe@rumblelabs.com', password: 'password', password_confirmation: 'password'},
-    {username: 'rory', email: 'rorymccawl@gmail.com', password: 'password', password_confirmation: 'password'}
+    {username: 'tommy', email: 'hi@tommyp.org', password: 'password', password_confirmation: 'password', twitter: 'tommyp', website: 'http://imanidiot.com/'},
+    {username: 'shylands', email: 'shylands@rumblelabs.com', password: 'password', password_confirmation: 'password', twitter: 'shylands', website: 'http://dickeater.com/'},
+    {username: 'andy', email: 'andy@grow.com', password: 'password', password_confirmation: 'password', twitter: 'andylad', website: 'http://somewebsite.com/'},
+    {username: 'johnny', email: 'jonathan_alban@me.com', password: 'password', password_confirmation: 'password', twitter: 'johnnysomething', website: 'http://hiya.org/'},
+    {username: 'matt', email: 'mwc0000@gmail.com', password: 'password', password_confirmation: 'password', twitter: 'mattontwitter', website: 'http://lmao.com/'},
+    {username: 'hamstarr', email: 'shamilton@rumblelabs.com', password: 'password', password_confirmation: 'password', twitter: 'simhamuk2012xx0x0x', website: 'http://internetwizard.org/'},
+    {username: 'davidjrice', email: 'drice@rumblelabs.com', password: 'password', password_confirmation: 'password', twitter: 'twitterusername', website: 'http://website.com/'},
+    {username: 'wakeuphate', email: 'mleetch@rumblelabs.com', password: 'password', password_confirmation: 'password', twitter: 'twitterusername', website: 'http://website.com/'},
+    {username: 'terminaldude', email: 'jrowe@rumblelabs.com', password: 'password', password_confirmation: 'password', twitter: 'twitterusername', website: 'http://website.com/'},
+    {username: 'rory', email: 'rorymccawl@gmail.com', password: 'password', password_confirmation: 'password', twitter: 'twitterusername', website: 'http://website.com/'}
   ])
 
 
