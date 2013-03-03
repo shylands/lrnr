@@ -160,10 +160,11 @@ input::-webkit-input-placeholder {color:#E2E2F3;}
 .nav > li > a {color:#747484;}
 .navbar-inner img {width:28px; height:28px; border-radius:3px; border:1px solid #535363;}
 
-ul.dropdown-menu {background:#0F0F1F; border-radius:0; }
+ul.dropdown-menu {background:#0F0F1F; border-radius:0; margin:0; }
 ul.dropdown-menu li a {color:#fff; @include freight-heavy; text-transform:uppercase;}
 ul.dropdown-menu li:hover {color:#0F0F1F;}
 
+.navbar .nav > li > .dropdown-menu:after {border:0; display:none;}
 
 .vote-count {  }
 
