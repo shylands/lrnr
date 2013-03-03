@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  skip_before_filter :authenticate_user!, :only => [:index, :show]
+  skip_before_filter :authenticate_user!, :only => [:index, :show, :search]
   before_filter :auth, :except => [:index, :show]
 
 
