@@ -142,6 +142,18 @@ input::-webkit-input-placeholder {color:#E2E2F3;}
    margin-top:11px;
 }
 
+.signin-btn {
+  font-size:15px;
+  text-transform:uppercase;
+  padding: 3px 5px 3px 5px;
+  line-height: 0;
+  color:#1b1b1b;
+  @include freight-heavy;
+   text-shadow:0;
+   letter-spacing: 1px;
+   margin-top:11px;
+}
+
 .submit-btn a {color:#1b1b1b !important; text-shadow:0 !important; }
 .submit-btn a:hover {color:#535364 !important;}
 

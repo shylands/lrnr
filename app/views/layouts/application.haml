@@ -30,10 +30,10 @@
                 %li.submit-btn
                   = link_to 'Submit', new_post_path              
             - else
-              %li
-                = link_to 'Sign up', new_user_registration_path
-              %li
+              %li.signin-btn
                 = link_to 'Sign in', new_user_session_path
+              %li.submit-btn
+                = link_to 'Register', new_user_registration_path
 
     .search-bar
       .container
