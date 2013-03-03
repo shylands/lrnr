@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   skip_before_filter :authenticate_user!, :only => [:index, :show]
-  before_filter :auth, :only => [:index, :show]
+  before_filter :auth, :except => [:index, :show]
 
   # GET /posts
   # GET /posts.json

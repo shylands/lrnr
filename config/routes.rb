@@ -15,10 +15,6 @@ Grow::Application.routes.draw do
 
   devise_for :users 
 
-  devise_scope :user do
-    root :to => "dashboard#index"
-  end
-
   match "/dashboard" => "dashboard#index", :as => :dashboard
 
   match '/users/:username' => 'users#show', :as => :user_profile
