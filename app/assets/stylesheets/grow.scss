@@ -71,6 +71,26 @@ body {
   border-bottom:1px solid #ECECFB;
 }
 
+.about-content {
+  margin-top: 40px;
+  .about-left {
+    float: left;
+    width: 60%;
+  }
+  .about-right {
+    width: 30%;
+    float:right;
+  }
+}
+
+.paragraph-intro {
+  font-size: 21px;
+  line-height: 29px;
+  font-weight: 700;
+}
+
+
+
 .strapline {
   font-weight: 200;
   font-size: 28px;
