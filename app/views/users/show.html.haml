@@ -4,17 +4,16 @@
 
   .span8
     %h1.beta Hi #{@user.username.titleize},
-    .row-fluid
-      .span2
+    .bio
+      .bio-left
         = image_tag (avatar_url(current_user))
-      .span10
-        %p
+      .bio-right
+        %p.bio-website
         = current_user.website
         %br/
-        %p
+        %p.bio-twitter
         = current_user.twitter
-        %hr/
-        %a.edit-profile
+        %p.bio-edit
         = link_to 'Edit Profile', edit_user_registration_path
 
 

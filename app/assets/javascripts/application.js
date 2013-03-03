@@ -18,3 +18,18 @@
 //= require bootstrap-modal
 //= require bookmarks
 //= require posts
+
+$(function() {
+  $('#search-box').keyup(function (ev) {
+    // Could start doing searches and displaying matching posts...
+    console.log('term: ' + $('#search-box').val())
+  })
+  
+  $('#search-box').keypress(function(e) {
+    if(e.which == 13) {
+      var url = '/search/' + $('#search-box').val()
+      console.log(url)
+      window.location.replace(url);
+    }
+  })
+})
