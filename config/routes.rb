@@ -4,7 +4,7 @@ Grow::Application.routes.draw do
   
   match '/search/:q' => 'posts#search', :as => :search  
 
-  resources :posts do
+  resources :posts, :except => [:show] do
     post 'vote' => 'votes#create', :as => :vote
     delete 'vote' => 'votes#destroy', :as => :vote
     post 'bookmark' => 'bookmarks#create', :as => :bookmark
