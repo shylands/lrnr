@@ -5,32 +5,9 @@
     
     %h1.beta Hi #{@user.username.titleize}
 
-<<<<<<< HEAD
-.row-fluid
-  .container
-    .span8
-      .tabbable
-      / Only required for left/right tabs
-      %ul.nav.nav-tabs
-        %li.active
-          %a{"data-toggle" => "tab", :href => "#tab1"} Learning Queue
-        %li
-          %a{"data-toggle" => "tab", :href => "#tab2"} Learnt
-      .tab-content
-        #tab1.tab-pane.active
-          %div
-            .posts.content-list
-              - @queued_posts.each do |post|
-                = render post
-        #tab2.tab-pane
-          %div
-            .posts.content-list
-              - @learnt_posts.each do |post|
-                = render post
-=======
+    
     - @user.posts.each do |post|
       = render post
->>>>>>> User profile layout
     
 
 
