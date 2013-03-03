@@ -1,6 +1,6 @@
 class TagsController < ApplicationController
 
-  skip_before_filter :authenticate_user!, :except => [:index, :show]
+  skip_before_filter :authenticate_user!, :only => [:index, :show]
   # GET /tags
   # GET /tags.json
   def index
