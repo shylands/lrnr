@@ -43,7 +43,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    tags = params[:post].delete(:tags).split(/, /)
+    tags = params[:post].delete(:tag_list).split(/, /)
     
     @post = Post.new(params[:post])
     @post.user = current_user

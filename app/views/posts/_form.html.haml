@@ -11,11 +11,12 @@
   .field
     = f.input :url, :label => "Content URL"
   .field
+    = f.input :tag_list, :value => ""
+  .field
     %label.checkbox
       = f.input :original, :as => :boolean, :label => false, :boolean_style => :inline
       Did you create this content?
   .field
-    = f.input :tags
     %label.checkbox
       = f.input :agreement, :as => :boolean, :label => false, :boolean_style => :inline
       By ticking this you agree to not post any content that can’t be learnt from or things of a foul, naughty or offensive nature!
