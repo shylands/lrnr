@@ -132,7 +132,7 @@ margin: 0;
 .search-bar {background:#EAFAFF; height:140px;}
 .search-bar input {width:100%; border:1px solid #DBDBEA; height:67px; border-radius:0; font-size:30px; font-family: "freight-sans-pro",sans-serif;
 	font-style: normal; line-height:2em;
-	font-weight: 700; color:#E2E2F3; margin-top:38px; background: #fff image-url("search-icon.png") no-repeat 884px; padding:20px;}
+	font-weight: 700; color:#1b1b1b; margin-top:38px; background: #fff image-url("search-icon.png") no-repeat 884px; padding:20px;}
 input::-webkit-input-placeholder {color:#E2E2F3;}
 .submit-btn {
 	background: $vote-yellow;
@@ -259,6 +259,10 @@ ul.dropdown-menu li:hover {color:#0F0F1F;}
 }
 
 .well.white {background:#fff; border:0; box-shadow:none; padding:0;}
+
+
+.typeahead.dropdown-menu {width:940px; margin-top:37px;}
+.typeahead.dropdown-menu li a {line-height:3em; border-bottom:1px solid #333; font-size:22px;}
 
 // Typography
 
