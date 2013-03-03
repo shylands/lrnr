@@ -6,12 +6,7 @@
           Lrnr
         helps you take the initiative and learn what you really want to.
         = link_to  "Find out how", "/about"
-.row-fluid
-  .container
-    .span12
-      - @tags.each do |tag|
-        .tag
-          = link_to tag.name, tag_path(tag.name)
+     
 .row-fluid
   .container
     .span8
@@ -26,6 +21,6 @@
       %h1.beta
         Topics
       .well.white
-        %a.content-card-tag{:href => "/topics/web-design"} Web Design
-        %a.content-card-tag{:href => "/topics/web-design"} Cooking
-        %a.content-card-tag{:href => "/topics/web-design"} Spanish
+      - @tags.each do |tag|
+        = link_to tag.name, tag_path(tag.name), :class => "content-card-tag"
+
