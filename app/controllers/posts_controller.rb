@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   skip_before_filter :authenticate_user!, :only => [:index, :show]
   before_filter :auth, :except => [:index, :show]
 
+
   # GET /posts
   # GET /posts.json
   def index
@@ -23,6 +24,17 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }
+    end
+  end
+ 
+  # GET /search
+  # GET /search.json
+  def search
+    @posts = Post.tagged_with(params[:q])
+    
+    respond_to do |format|
+      format.html # search.html.erb
+      format.json { render json: @posts }
     end
   end
 
