@@ -20,7 +20,7 @@
           %ul.pull-right.nav
             - if current_user
               %li
-                = link_to image_tag(avatar_url(current_user)), user_profile_path(current_user.username)
+                = link_to image_tag(avatar_url(current_user)), user_profile_path(current_user.username), :class => 'profile-pic'
               %li
                 = link_to 'Add a new post', new_post_path
               %li
