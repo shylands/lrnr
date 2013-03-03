@@ -10,6 +10,8 @@ gem 'sqlite3'
 gem 'haml-rails'
 gem 'simple_form'
 
+gem 'acts-as-taggable-on', '~> 2.3.1'
+
 gem 'devise'
 gem 'friendly_id'
 

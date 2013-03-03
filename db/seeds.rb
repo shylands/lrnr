@@ -19,13 +19,12 @@ users = User.create([
     {username: 'rory', email: 'rorymccawl@gmail.com', password: 'password', password_confirmation: 'password'}
   ])
 
-
-tags = Tag.create([
-  {title: "tag1"},
-  {title: "tag2"}
-  {title: "tag3"}
-])
-
-Post.create(title: 'Really nice tutorial on HTML', url: 'http://google.com', user: User.all.sample, topic: Topic.first)
-Post.create(title: 'Some useful tips when working with CSS', url: 'http://bbc.co.uk', user: User.all.sample, topic: Topic.first)
-Post.create(title: 'How to work with Bootstrap', url: 'http://twitter.github.com/bootstrap', user: User.all.sample, topic: Topic.first)
+post1 = Post.new(title: 'Really nice tutorial on HTML', url: 'http://google.com', user: User.all.sample)
+post1.tag_list = 'html, web, design'
+post1.save
+post2 = Post.new(title: 'Some useful tips when working with CSS', url: 'http://bbc.co.uk', user: User.all.sample)
+post2.tag_list = 'CSS, web, design'
+post2.save
+post3 = Post.new(title: 'How to work with Bootstrap', url: 'http://twitter.github.com/bootstrap', user: User.all.sample)
+post3.tag_list = 'web, boostrap, css'
+post3.save

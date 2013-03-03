@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
+    @tags = Post.tag_counts_on(:tags)
     @posts = Post.all
 
     respond_to do |format|
@@ -44,14 +45,13 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    tags = params[:post].delete(:tag_list).split(/, /)
     
     @post = Post.new(params[:post])
     @post.user = current_user
     
-    tags.each do |tag|
-      @post.tags.new({:title => tag})
-    end
+    # tags.each do |tag|
+    #   @post.tags.new({:title => tag})
+    # end
     
     respond_to do |format|
       if @post.save

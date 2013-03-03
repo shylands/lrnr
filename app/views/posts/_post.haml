@@ -27,7 +27,7 @@
         ago
       .content-card-topics
       - post.tags.each do |tag|
-        %a.content-card-tag{:href => "/topics/#{tag.title}"}= tag.title
+        %a.content-card-tag{:href => "/topics/#{tag.name}"}= tag.name
       %br/
       - if current_user == post.user
         = link_to 'Edit', edit_post_path(post)
