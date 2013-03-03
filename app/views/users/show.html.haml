@@ -1,7 +1,11 @@
 .row-fluid
-  .container
+  
+  //Left side
+  %div.span8
+    
     %h1.beta Hi #{@user.username.titleize}
 
+<<<<<<< HEAD
 .row-fluid
   .container
     .span8
@@ -23,7 +27,20 @@
             .posts.content-list
               - @learnt_posts.each do |post|
                 = render post
+=======
+    - @user.posts.each do |post|
+      = render post
+>>>>>>> User profile layout
     
-    .span4
-      %h1.beta Have something to share?
-      %p Do you know of something that others could learnt from? Feel free to get involved and contribute your links.
+
+
+
+
+  %div.span4
+
+    %h1.beta Have something to share?
+    %p Do you know of something that others could learnt from? Feel free to get involved and contribute your links.
+    %div.contribute-btn
+      = link_to 'CONTRIBUTE', new_post_path
+
+

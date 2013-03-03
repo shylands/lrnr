@@ -191,9 +191,9 @@ ul.dropdown-menu li:hover {color:#0F0F1F;}
     display: block;
   }
 }
-.vote-btn {
+
+.vote-btn, .contribute-btn {
   position: relative;
-  height: 20px;
   border-radius:3px;
   width: 100%;
   display: block;
@@ -222,6 +222,14 @@ ul.dropdown-menu li:hover {color:#0F0F1F;}
       bottom: -2px;
     }
   }
+
+}
+
+.contribute-btn {
+
+  margin-top: 28px;
+  padding: .5em
+
 }
 
 
