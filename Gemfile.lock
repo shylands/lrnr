@@ -36,6 +36,10 @@ GEM
       sass (>= 3.2.0)
       thor
     builder (3.0.4)
+    chosen-rails (0.9.11.2)
+      coffee-rails (>= 3.2)
+      railties (>= 3.0)
+      sass-rails (>= 3.2)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -80,7 +84,6 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.21)
     multi_json (1.6.1)
-    mysql2 (0.3.11)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
     rack (1.4.5)
@@ -140,13 +143,13 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 2.3.0.1)
   bourbon
+  chosen-rails
   coffee-rails (~> 3.2.1)
   debugger
   devise
   friendly_id
   haml-rails
   jquery-rails
-  mysql2
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
   simple_form
