@@ -6,13 +6,13 @@
     %h1.beta Hi #{@user.username.titleize},
     .bio
       .bio-left
-        = image_tag (avatar_url(current_user))
+        = image_tag (avatar_url(@user))
       .bio-right
         %p.bio-website
-        = current_user.website
+        = @user.website
         %br/
         %p.bio-twitter
-        = current_user.twitter
+        = @user.twitter
         %p.bio-edit
         = link_to 'Edit Profile', edit_user_registration_path
 
@@ -27,10 +27,16 @@
     .tab-content
 
       #tab1.tab-pane.active
-        - @user.posts.each do |post|
-          = render post
+        - if @user.posts.empty?
+          %p You have no topics bookmarked.
+
+        - else
+          - @user.posts.each do |post|
+            = render post
 
       #tab2.tab-pane
+        - if @user.posts.empty?
+          %p You havn't LRNT any topics yet.
         - @user.posts.each do |post|
           = render post
 
