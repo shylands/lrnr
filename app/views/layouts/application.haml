@@ -12,13 +12,13 @@
     .navbar.navbar-static-top.navbar-inverse
       .navbar-inner
         .container
-
-
           %a.brand{:href => root_path}
             LRNR
             %span Grow your own way
           %ul.pull-right.nav
             - if current_user
+              %li.link
+                = link_to 'My Queue', dashboard_path
               %li.dropdown
                 = link_to '#', "data-toggle" => "dropdown" do
                   = image_tag (avatar_url(current_user))
@@ -28,7 +28,7 @@
                 %li.submit-btn
                   = link_to 'Contribute', new_post_path
             - else
-              %li.signin-btn
+              %li.link
                 = link_to 'Sign in', new_user_session_path
               %li.submit-btn
                 = link_to 'Register', new_user_registration_path
