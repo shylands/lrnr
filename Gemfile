@@ -5,7 +5,15 @@ gem 'rails', '3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :development do
+  gem 'sqlite3'
+  # To use debugger
+  gem 'debugger'
+end
+
+group :production do
+  gem 'pg'
+end
 
 gem 'haml-rails'
 gem 'simple_form'
@@ -45,6 +53,3 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 gem 'chosen-rails'
-
-# To use debugger
-gem 'debugger'

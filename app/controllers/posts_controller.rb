@@ -16,16 +16,16 @@ class PostsController < ApplicationController
     end
   end
 
-  # GET /posts/1
-  # GET /posts/1.json
-  def show
-    @post = Post.find(params[:id])
+  # # GET /posts/1
+  # # GET /posts/1.json
+  # def show
+  #   @post = Post.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @post }
-    end
-  end
+  #   respond_to do |format|
+  #     format.html # show.html.erb
+  #     format.json { render json: @post }
+  #   end
+  # end
  
   # GET /search
   # GET /search.json

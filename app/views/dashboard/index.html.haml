@@ -4,7 +4,11 @@
 .container-fluid
   .row-fluid
     .span8
-      %div
-        .posts.content-list
+      %h2
+        Learning Queue
+      .posts.content-list
+        - if current_user.bookmarks.empty?
+          You haven't bookmarked anything yet
+        - else
           - current_user.bookmarks.each do |bookmark|
             = render :partial => 'posts/post', :locals => {:post => bookmark.post}
