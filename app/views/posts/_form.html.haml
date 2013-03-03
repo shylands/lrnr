@@ -11,7 +11,8 @@
   .field
     = f.input :url, :label => "Content URL"
   .field
-    = f.input :tag_list, :value => ""
+    %label Tags
+    = f.select :tag_list, :collection => ["lead","vteam"]
   .field
     %label.checkbox
       = f.input :original, :as => :boolean, :label => false, :boolean_style => :inline
