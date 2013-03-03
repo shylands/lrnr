@@ -1,10 +1,22 @@
 .row-fluid
 
   //Left side
-  %div.span8
-    %h1.beta #{@user.username.titleize}
-    %p= current_user.website
-    %p= current_user.twitter
+
+  .span8
+    %h1.beta Hi #{@user.username.titleize},
+    .row-fluid
+      .span2
+        = image_tag (avatar_url(current_user))
+      .span10
+        %p
+        = current_user.website
+        %br/
+        %p
+        = current_user.twitter
+        %hr/
+        %a.edit-profile
+        = link_to 'Edit Profile', edit_user_registration_path
+
 
     .tabbable
       %ul.nav.nav-tabs
@@ -24,7 +36,7 @@
           = render post
 
 
-  %div.span4
+  .span4
 
     %h1.beta Have something to share?
     %p Do you know of something that others could learnt from? Feel free to get involved and contribute your links.
