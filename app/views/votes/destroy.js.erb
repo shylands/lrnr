@@ -1,2 +1,3 @@
 var $post = $('.vote-<%= @post.id %>');
 $post.find('.vote-count-number').html(<%= @count %>);
+$post.find('.lrnt-button').html('<%= link_to "LRNT", post_vote_up_path(@post), :class => "vote-btn", :remote => true %>');
