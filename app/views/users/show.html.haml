@@ -5,12 +5,22 @@
     
     %h1.beta Hi #{@user.username.titleize}
 
-    
-    - @user.posts.each do |post|
-      = render post
-    
+    .tabbable
+      %ul.nav.nav-tabs
+        %li.active
+          %a{"data-toggle" => "tab", :href => "#tab1"} Learning Queue
+        %li
+          %a{"data-toggle" => "tab", :href => "#tab2"} Learnt
 
+    .tab-content
+      
+      #tab1.tab-pane.active
+        - @user.posts.each do |post|
+          = render post
 
+      #tab2.tab-pane
+        - @user.posts.each do |post|
+          = render post
 
 
   %div.span4
