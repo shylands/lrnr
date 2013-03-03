@@ -29,9 +29,9 @@ class PostsController < ApplicationController
   # GET /search
   # GET /search.json
   def search
-    # @posts = Post.tagged_with(params[:q])
+    # 
   
-
+    @posts = Post.tagged_with(params[:q])
     @tags = Tag.search(params[:q])
 
     # @tags = @posts.map {|p| p.tags }.flatten.map {|t| t.name }.uniq
