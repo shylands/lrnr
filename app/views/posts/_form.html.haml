@@ -11,6 +11,8 @@
   .field
     = f.input :url, :label => "Content URL"
   .field
+    = f.input :tag_list, :value => ""
+  .field
     %label.checkbox
       = f.input :original, :as => :boolean, :label => false, :boolean_style => :inline
       Did you create this content?

@@ -1,82 +1,91 @@
-%h1.beta Hi #{@user.username.titleize}
+.row-fluid
+  .container
+    %h1.beta Hi #{@user.username.titleize}
 
-.tabbable
-  / Only required for left/right tabs
-  %ul.nav.nav-tabs
-    %li.active
-      %a{"data-toggle" => "tab", :href => "#tab1"} Learning Queue
-    %li
-      %a{"data-toggle" => "tab", :href => "#tab2"} Learnt
-  .tab-content
-    #tab1.tab-pane.active
-      %div
-        .posts.content-list
-          - @queued_posts.each do |post|
-            .post.content-card
-              .row-fluid
-                .span2
-                  .post.actions
-                  .vote-count
-                    %p
-                      = post.votes.size
-                    .vote-btn
-                      %a{:href => "#"} LRNT
-                  .vote
-                    - if current_user
-                      - vote = current_user.votes.where(:post_id => post.id).exists?
-                      - if vote
-                        = link_to 'Remove vote', post_vote_path(post, vote), :method => :delete
-                      -else
-                        = link_to 'Vote Up', post_vote_path(post, vote), :method => :post
-                .span10
-                  %h1.content-card-title
-                    = link_to post.title, post.url
-                  %p.content-card-subtext
-                    From
-                    = link_to  "Website Url", "#"
-                    by
-                    = post.user.username
-                    = time_ago_in_words(post.created_at)
-                    ago
-                  .content-card-topics
-                    -# post.tags.each do TODO THIS THING @john
-                    - if current_user == post.user
-                      %br/
-                      = link_to 'Edit', edit_post_path(post)
-                      = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-    #tab2.tab-pane
-      %div
-        .posts.content-list
-          - @learnt_posts.each do |post|
-            .post.content-card
-              .row-fluid
-                .span2
-                  .post.actions
-                  .vote-count
-                    %p
-                      = post.votes.size
-                    .vote-btn
-                      %a{:href => "#"} LRNT
-                  .vote
-                    - if current_user
-                      - vote = current_user.votes.where(:post_id => post.id).exists?
-                      - if vote
-                        = link_to 'Remove vote', post_vote_path(post, vote), :method => :delete
-                      -else
-                        = link_to 'Vote Up', post_vote_path(post, vote), :method => :post
-                .span10
-                  %h1.content-card-title
-                    = link_to post.title, post.url
-                  %p.content-card-subtext
-                    From
-                    = link_to  "Website Url", "#"
-                    by
-                    = post.user.username
-                    = time_ago_in_words(post.created_at)
-                    ago
-                  .content-card-topics
-                    -# post.tags.each do TODO THIS THING @john
-                    - if current_user == post.user
-                      %br/
-                      = link_to 'Edit', edit_post_path(post)
-                      = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+.row-fluid
+  .container
+    .span8
+      .tabbable
+      / Only required for left/right tabs
+      %ul.nav.nav-tabs
+        %li.active
+          %a{"data-toggle" => "tab", :href => "#tab1"} Learning Queue
+        %li
+          %a{"data-toggle" => "tab", :href => "#tab2"} Learnt
+      .tab-content
+        #tab1.tab-pane.active
+          %div
+            .posts.content-list
+              - @queued_posts.each do |post|
+                .post.content-card
+                  .row-fluid
+                    .span2
+                      .post.actions
+                      .vote-count
+                        %p
+                          = post.votes.size
+                        .vote-btn
+                          %a{:href => "#"} LRNT
+                      .vote
+                        - if current_user
+                          - vote = current_user.votes.where(:post_id => post.id).exists?
+                          - if vote
+                            = link_to 'Remove vote', post_vote_path(post, vote), :method => :delete
+                          -else
+                            = link_to 'Vote Up', post_vote_path(post, vote), :method => :post
+                    .span10
+                      %h1.content-card-title
+                        = link_to post.title, post.url
+                      %p.content-card-subtext
+                        From
+                        = link_to  "Website Url", "#"
+                        by
+                        = post.user.username
+                        = time_ago_in_words(post.created_at)
+                        ago
+                      .content-card-topics
+                        -# post.tags.each do TODO THIS THING @john
+                        - if current_user == post.user
+                          %br/
+                          = link_to 'Edit', edit_post_path(post)
+                          = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        #tab2.tab-pane
+          %div
+            .posts.content-list
+              - @learnt_posts.each do |post|
+                .post.content-card
+                  .row-fluid
+                    .span2
+                      .post.actions
+                      .vote-count
+                        %p
+                          = post.votes.size
+                        .vote-btn
+                          %a{:href => "#"} LRNT
+                      .vote
+                        - if current_user
+                          - vote = current_user.votes.where(:post_id => post.id).exists?
+                          - if vote
+                            = link_to 'Remove vote', post_vote_path(post, vote), :method => :delete
+                          -else
+                            = link_to 'Vote Up', post_vote_path(post, vote), :method => :post
+                    .span10
+                      %h1.content-card-title
+                        = link_to post.title, post.url
+                      %p.content-card-subtext
+                        From
+                        = link_to  "Website Url", "#"
+                        by
+                        = post.user.username
+                        = time_ago_in_words(post.created_at)
+                        ago
+                      .content-card-topics
+                        -# post.tags.each do TODO THIS THING @john
+                        - if current_user == post.user
+                          %br/
+                          = link_to 'Edit', edit_post_path(post)
+                          = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    
+    .span4
+      %h1.beta Have something to share?
+      %p Do you know of something that others could learnt from? Feel free to get involved and contribute your links.

@@ -44,9 +44,15 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+    tags = params[:post].delete(:tag_list).split(/, /)
+    
     @post = Post.new(params[:post])
     @post.user = current_user
-
+    
+    tags.each do |tag|
+      @post.tags.new({:title => tag})
+    end
+    
     respond_to do |format|
       if @post.save
         format.html { redirect_to root_path, notice: 'Post was successfully created.' }
