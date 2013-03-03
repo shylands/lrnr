@@ -12,23 +12,30 @@
               = link_to 'REMOVE', post_vote_path(post, vote), :method => :delete, :class => "vote-btn"
             -else
               = link_to 'LRNT', post_vote_path(post, vote), :method => :post, :class => "vote-btn"
-      .save
-        = link_to 'Later', post_bookmark_path(post), :remote => true, :method => :post
+          - else
+            = link_to 'LRNT', new_user_session_path, :method => :post, :class => "vote-btn"
+
+      - if current_user == post.user
+        .edit
+          = link_to '', edit_post_path(post)
+        .delete
+          = link_to '', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      - else
+        .save
+          = link_to 'Later', post_bookmark_path(post), :remote => true, :method => :post
 
     .span10
       %h1.content-card-title
         = link_to post.title, post.url
       %p.content-card-subtext
         From
-        = link_to get_sitename(post.url), "#"
+        = link_to get_sitename(post.url), post.url
         by
-        = post.user.username
+        = link_to post.user.username, user_profile_path(post.user.username)
         = time_ago_in_words(post.created_at)
         ago
       .content-card-topics
       - post.tags.each do |tag|
         %a.content-card-tag{:href => "/topics/#{tag.name}"}= tag.name
       %br/
-      - if current_user == post.user
-        = link_to 'Edit', edit_post_path(post)
-        = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      

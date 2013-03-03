@@ -1,16 +1,29 @@
 .row-fluid
-  
+
   //Left side
   %div.span8
-    
-    %h1.beta Hi #{@user.username.titleize}
+    %h1.beta #{@user.username.titleize}
+    %br/
+    = current_user.website
+    %br/
+    = current_user.twitter
 
-    
-    - @user.posts.each do |post|
-      = render post
-    
+    .tabbable
+      %ul.nav.nav-tabs
+        %li.active
+          %a{"data-toggle" => "tab", :href => "#tab1"} Learning Queue
+        %li
+          %a{"data-toggle" => "tab", :href => "#tab2"} Learnt
 
+    .tab-content
 
+      #tab1.tab-pane.active
+        - @user.posts.each do |post|
+          = render post
+
+      #tab2.tab-pane
+        - @user.posts.each do |post|
+          = render post
 
 
   %div.span4

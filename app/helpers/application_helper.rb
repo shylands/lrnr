@@ -8,5 +8,4 @@ module ApplicationHelper
   def get_sitename(url)
     url.scan(/https?:\/\/[www.]?(.*\.[a-z]*)/)[0][0].to_s
   end
-
 end
