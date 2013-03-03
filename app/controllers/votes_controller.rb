@@ -1,22 +1,23 @@
 class VotesController < ApplicationController
 
+  layout false
+
   def create
-    post = Post.find(params[:post_id])
-    Vote.where(post_id: post.id, user_id: current_user.id).first_or_create
+    @post = Post.find(params[:post_id])
+    Vote.where(post_id: @post.id, user_id: current_user.id).first_or_create
+    @vote = Vote.where(user_id: current_user.id, post_id: @post.id)
 
     respond_to do |format|
-      format.json { head :ok }
-      format.html { render :text => "Voted up" }
+      format.js
     end
   end
 
   def destroy
-    post = Post.find(params[:post_id])
-    Vote.where(user_id: current_user.id, post_id: post.id).destroy_all
+    @post = Post.find(params[:post_id])
+    Vote.where(user_id: current_user.id, post_id: @post.id).destroy_all
 
     respond_to do |format|
-      format.json { head :ok }
-      format.html { render :text => "Vote removed" }
+      format.js
     end
   end
 

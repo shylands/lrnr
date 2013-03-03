@@ -2,16 +2,16 @@
   .row-fluid
     .span2
       .post.actions
-      .vote-count
+      .vote-count{ :class => "vote-#{post.id}" }
         %span.vote-count-number
           = post.votes.size
         .lrnt-button
           - if current_user
             - vote = current_user.votes.where(:post_id => post.id).exists?
             - if vote
-              = link_to 'REMOVE', post_vote_path(post, vote), :method => :delete, :class => "vote-btn"
+              = link_to 'REMOVE', post_vote_down_path(post), :class => "vote-btn", :remote => true
             -else
-              = link_to 'LRNT', post_vote_path(post, vote), :method => :post, :class => "vote-btn"
+              = link_to 'LRNT', post_vote_up_path(post), :class => "vote-btn", :remote => true
           - else
             = link_to 'LRNT', new_user_session_path, :method => :post, :class => "vote-btn"
 
@@ -38,4 +38,4 @@
         - post.tags.each do |tag|
           = link_to tag.name, tag_path(tag.name), :class => 'content-card-tag'
       %br/
-      
+

@@ -1,13 +1,13 @@
 Grow::Application.routes.draw do
 
   match '/about' => "site#about", :as => :about
-  
-  match '/search/:q' => 'posts#search', :as => :search  
+
+  match '/search/:q' => 'posts#search', :as => :search
   post '/search' => 'posts#search'
 
   resources :posts, :except => [:show] do
-    post 'vote' => 'votes#create', :as => :vote
-    delete 'vote' => 'votes#destroy', :as => :vote
+    get 'lrnt' => 'votes#create', :as => :vote_up
+    get 'remove' => 'votes#destroy', :as => :vote_down
     post 'bookmark' => 'bookmarks#create', :as => :bookmark
     delete 'bookmark' => 'bookmarks#destroy', :as => :bookmark
   end
@@ -16,7 +16,7 @@ Grow::Application.routes.draw do
 
   resources :topics
 
-  devise_for :users 
+  devise_for :users
 
   match "/dashboard" => "dashboard#index", :as => :dashboard
 

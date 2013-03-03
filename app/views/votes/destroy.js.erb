@@ -1,0 +1,2 @@
+var $post = $('.vote-<%= @post.id %>');
+$post.find('.vote-count-number').html(parseInt($post.find('.vote-count-number').text())-1);
