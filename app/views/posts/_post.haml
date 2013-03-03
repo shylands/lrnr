@@ -36,6 +36,6 @@
         ago
       .content-card-topics
       - post.tags.each do |tag|
-        %a.content-card-tag{:href => "/topics/#{tag.name}"}= tag.name
+        = link_to tag.name, tag_path(tag.name), :class => 'content-card-tag'
       %br/
       

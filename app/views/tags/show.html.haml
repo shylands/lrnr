@@ -1,0 +1,7 @@
+%h2
+  Viewing all the posts tagged with
+  = params[:tag]
+
+.container
+  - @posts.each do |post|
+    = render post

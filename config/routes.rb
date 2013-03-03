@@ -1,7 +1,5 @@
 Grow::Application.routes.draw do
 
-  
-
   match '/about' => "site#about", :as => :about
 
   resources :posts do
@@ -10,6 +8,8 @@ Grow::Application.routes.draw do
     post 'bookmark' => 'bookmarks#create', :as => :bookmark
     delete 'bookmark' => 'bookmarks#destroy', :as => :bookmark
   end
+
+  match '/tags/:tag' => 'tags#show', :as => :tag
 
   resources :topics
 
