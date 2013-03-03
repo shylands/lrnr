@@ -72,11 +72,11 @@ post13 = Post.new(title: 'http://rumblelabs.com/blog/how-to-go-from-being-a-rail
 post13.tag_list = 'beginner, programming, rails, web development, back-end'
 post13.save
 
-post14 = Post.new(title: 'Roasted Vegetable and Goat Cheese Terrine', url: 'http://www.foodnetwork.com/recipes/emeril-lagasse/roasted-vegetable-and-goat-cheese-terrine-recipe/index.html', user: User.all.sample)
+post14 = Post.new(title: 'Roasted Vegetable and Goat Cheese Terrine', url: 'http://www.foodnetwork.com/recipes/emeril-lagasse/roasted-vegetable-and-goat-cheese-terrine-recipe/', user: User.all.sample)
 post14.tag_list = 'intermediate, goats cheese, recipes, cooking, food'
 post14.save
 
-post15 = Post.new(title: 'CAE Practice Tests', url: 'http://www.flo-joe.co.uk/cae/students/tests/pt1index.htm', user: User.all.sample)
+post15 = Post.new(title: 'CAE Practice Tests', url: 'http://www.flo-joe.co.uk/cae/students/tests/', user: User.all.sample)
 post15.tag_list = 'advanced, cae, english'
 post15.save
 
