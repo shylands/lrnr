@@ -12,7 +12,7 @@
     = f.input :url, :label => "Content URL"
   .field
     %label Tags
-    = f.select :tag_list, :collection => ["lead","vteam"]
+    = f.select :tag_list, :collection => Post.tag_counts_on(:tags).map{|t| [t.name, t.id]}, {:multiple => true}
   .field
     %label.checkbox
       = f.input :original, :as => :boolean, :label => false, :boolean_style => :inline
