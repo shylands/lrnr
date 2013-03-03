@@ -36,7 +36,7 @@
     .search-bar
       .container
         .row-fluid
-          %input{"id"=> "search-box", "data-provide" => "typeahead", :type => "text", :placeholder => "I WANT TO LEARN...", :value => params[:q]}/
+          %input{"id"=> "search-box", "data-provide" => "typeahead", "autocomplete" => "off", :type => "text", :placeholder => "I WANT TO LEARN...", :value => params[:q]}/
 
     .container
       .row-fluid

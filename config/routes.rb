@@ -3,6 +3,7 @@ Grow::Application.routes.draw do
   match '/about' => "site#about", :as => :about
   
   match '/search/:q' => 'posts#search', :as => :search  
+  post '/search' => 'posts#search'
 
   resources :posts, :except => [:show] do
     post 'vote' => 'votes#create', :as => :vote

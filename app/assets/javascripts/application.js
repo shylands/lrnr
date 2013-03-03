@@ -16,14 +16,15 @@
 //= require bootstrap-tab
 //= require bootstrap-dropdown
 //= require bootstrap-modal
+//= require bootstrap-typeahead
 //= require bookmarks
 //= require posts
 
 $(function() {
-  $('#search-box').keyup(function (ev) {
-    // Could start doing searches and displaying matching posts...
-    console.log('term: ' + $('#search-box').val())
-  })
+  // $('#search-box').keyup(function (ev) {
+  //   // Could start doing searches and displaying matching posts...
+  //   console.log('term: ' + $('#search-box').val())
+  // })
   
   $('#search-box').keypress(function(e) {
     if(e.which == 13) {
@@ -32,4 +33,12 @@ $(function() {
       window.location.replace(url);
     }
   })
+
+  $('#search-box').typeahead({
+    source: function (query, process) {
+        return $.post('/search.json', { q: query, dataType: 'json'}, function (data) {
+            return process(data);
+        });
+    }
+});
 })
