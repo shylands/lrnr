@@ -1,0 +1,11 @@
+%h1.beta 
+  Hi 
+  = current_user.username
+
+.container-fluid
+  .row-fluid
+    .span8
+      %div
+        .posts.content-list
+          - current_user.bookmarks.each do |bookmark|
+            = render :partial => 'posts/post', :locals => {:post => bookmark.post}
