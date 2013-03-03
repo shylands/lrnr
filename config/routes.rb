@@ -3,6 +3,8 @@ Grow::Application.routes.draw do
   
 
   match '/about' => "site#about", :as => :about
+  
+  match '/search/:q' => 'posts#search', :as => :search  
 
   resources :posts do
     post 'vote' => 'votes#create', :as => :vote
@@ -18,6 +20,8 @@ Grow::Application.routes.draw do
   match "/dashboard" => "dashboard#index", :as => :dashboard
 
   match '/users/:username' => 'users#show', :as => :user_profile
+
+  get 'posts/search'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
