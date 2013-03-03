@@ -20,51 +20,51 @@ users = User.create([
     {username: 'holsee', email: 'holsee@gmail.com', password: 'password', password_confirmation: 'password', twitter: 'twitterusername', website: 'http://website.com/'}
   ])
 
-post1 = Post.new(title: 'Really nice tutorial on HTML', url: 'http://google.com', user: User.all.sample)
-post1.tag_list = 'beginner, html, web, design'
+post1 = Post.new(title: 'HTML Beginner Tutorial', url: 'http://www.htmldog.com/guides/htmlbeginner/', user: User.all.sample)
+post1.tag_list = 'beginner, html, web, design, development, websites, build'
 post1.save
 
-post2 = Post.new(title: 'Some useful tips when working with CSS', url: 'http://bbc.co.uk', user: User.all.sample)
-post2.tag_list = 'intermediate, CSS, web, design'
+post2 = Post.new(title: 'How to Cook Perfect Lasagne', url: 'http://www.guardian.co.uk/lifeandstyle/wordofmouth/2011/nov/24/how-to-cook-perfect-lasagne', user: User.all.sample)
+post2.tag_list = 'intermediate, cooking, food, recipes, lasagne'
 post2.save
 
 post3 = Post.new(title: 'How to work with Bootstrap', url: 'http://twitter.github.com/bootstrap', user: User.all.sample)
 post3.tag_list = 'intermediate, beginner, web, boostrap, css'
 post3.save
 
-post4 = Post.new(title: 'HTML Semantics', url: 'http://google.com', user: User.all.sample)
-post4.tag_list = 'html, semantic'
+post4 = Post.new(title: 'Semantics - Dive into HTML5', url: 'http://diveintohtml5.info/semantics.html', user: User.all.sample)
+post4.tag_list = 'html, html5, intermediate, semantic'
 post4.save
 
-post5 = Post.new(title: 'CSS3 Gradients', url: 'http://google.com', user: User.all.sample)
-post5.tag_list = 'css, styling, web, design, web design'
+post5 = Post.new(title: 'Speed Up with CSS3 Gradients', url: 'http://css-tricks.com/css3-gradients/', user: User.all.sample)
+post5.tag_list = 'css, styling, web, design, web design, intermediate'
 post5.save
 
-post6 = Post.new(title: 'Microformats', url: 'http://google.com', user: User.all.sample)
-post6.tag_list = 'html, good practices, microformats, intermediate'
+post6 = Post.new(title: 'What are Microformats', url: 'http://microformats.org/wiki/what-are-microformats', user: User.all.sample)
+post6.tag_list = 'html, good practices, microformats, beginner'
 post6.save
 
-post7 = Post.new(title: 'Controllers in Rails', url: 'http://google.com', user: User.all.sample)
-post7.tag_list = 'mvc, ruby on rails, rails, beginner, css'
+post7 = Post.new(title: 'Rails Action Controller Overview', url: 'http://guides.rubyonrails.org/action_controller_overview.html', user: User.all.sample)
+post7.tag_list = 'mvc, ruby on rails, rails, beginner, development'
 post7.save
 
-post8 = Post.new(title: 'Bottle Framework', url: 'http://google.com', user: User.all.sample)
+post8 = Post.new(title: 'Bottle Framework User Guide', url: 'http://bottlepy.org/docs/dev/', user: User.all.sample)
 post8.tag_list = 'intermediate, python, framework'
 post8.save
 
-post9 = Post.new(title: 'CSS Dropdown Menus', url: 'http://google.com', user: User.all.sample)
-post9.tag_list = 'styling, css'
+post9 = Post.new(title: 'Creating a pure CSS dropdown menu', url: 'http://csswizardry.com/2011/02/creating-a-pure-css-dropdown-menu/', user: User.all.sample)
+post9.tag_list = 'styling, css, css3, intermediate'
 post9.save
 
-post10 = Post.new(title: 'Model in Rails', url: 'http://google.com', user: User.all.sample)
+post10 = Post.new(title: 'Getting Started with Rails', url: 'http://guides.rubyonrails.org/getting_started.html', user: User.all.sample)
 post10.tag_list = 'mvc, beginner, rails, ruby'
 post10.save
 
-post11 = Post.new(title: 'Github Tutorial', url: 'http://google.com', user: User.all.sample)
+post11 = Post.new(title: 'Introduction To Git', url: 'http://learn.github.com/p/intro.html', user: User.all.sample)
 post11.tag_list = 'beginner, programming, version control'
 post11.save
 
-post12 = Post.new(title: 'Caching', url: 'http://google.com', user: User.all.sample)
+post12 = Post.new(title: 'How Caching Works', url: 'http://computer.howstuffworks.com/cache.htm', user: User.all.sample)
 post12.tag_list = 'html5, caching, advanced'
 post12.save
 
