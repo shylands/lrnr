@@ -20,7 +20,6 @@
     .span4
       %h1.beta
         Topics
-      .well.white
       - @tags.each do |tag|
         = link_to tag.name, tag_path(tag.name), :class => "content-card-tag"
 
