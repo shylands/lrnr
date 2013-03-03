@@ -27,6 +27,8 @@
               = post.user.username
               = time_ago_in_words(post.created_at)
               ago
+            .save
+              = link_to 'Save for Later', post_bookmark_path(post), :remote => true, :method => :post
             .content-card-topics
               -# post.tags.each do TODO THIS THING @john
               - if current_user == post.user
