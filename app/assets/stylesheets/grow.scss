@@ -30,6 +30,7 @@ $vote-yellow-border: #EBEBB2;
 body {
   font-size: 16px;
   line-height: 1.5em;
+  font-family: "freight-sans-pro",sans-serif;
 }
 
 
@@ -52,7 +53,6 @@ body {
 }
 
 .content-card-tag {
-  font-family: "freight-sans-pro",sans-serif;
   background: $light-grey;
   color: $grey;
   padding: 4px 6px;
@@ -233,10 +233,34 @@ h1.beta {font-size:18px; text-transform:uppercase; line-height:3em; padding: 20p
 h2 {font-size:16px;}
 
 p {
-	font-family: "freight-sans-pro",sans-serif;
 	font-style: normal;
 	font-weight: 400;
 
 }
 
-footer {background:#F1F1F2; padding:20px 0 20px 0; margin-top:30px;}
+footer {
+  height: 100px;
+  background:#F1F1F2;
+  line-height: 100px;
+  margin-top:30px;
+  width: 100%;
+}
+
+.footer-links {
+  float: left;
+  margin-right: 8px;
+  font-weight: 700;
+  a {
+    color: $black;
+  }
+}
+
+
+.footer-strapline {
+  display: inline-block;
+  float: left;
+}
+
+.footer-copyright {
+  float: right;
+}

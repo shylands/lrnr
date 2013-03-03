@@ -46,7 +46,12 @@
     %footer
       .container
         .row-fluid
-          %h6
+          .footer-links
             %a{:href => "/"}
-              LRNR
-
+              LRNR.
+          .footer-strapline
+            Where people come to learn -
+            %a{:href => "/"}
+              Find out more
+          %p.footer-copyright
+            = "Copyright © #{Time.now.strftime('%Y')}. All rights reserved."
