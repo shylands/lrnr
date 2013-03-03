@@ -19,7 +19,12 @@ users = User.create([
     {username: 'rory', email: 'rorymccawl@gmail.com', password: 'password', password_confirmation: 'password'}
   ])
 
-Topic.create(name: 'Web Design', user: User.first)
+
+tags = Tag.create([
+  {title: "tag1"},
+  {title: "tag2"}
+  {title: "tag3"}
+])
 
 Post.create(title: 'Really nice tutorial on HTML', url: 'http://google.com', user: User.all.sample, topic: Topic.first)
 Post.create(title: 'Some useful tips when working with CSS', url: 'http://bbc.co.uk', user: User.all.sample, topic: Topic.first)
