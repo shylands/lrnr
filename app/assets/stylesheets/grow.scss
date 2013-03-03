@@ -11,6 +11,7 @@ $button-green: #BEDE02;
 $button-green-shadow: #A1BC05;
 $button-green-hover: #D4F807;
 $button-green-active: $button-green-shadow;
+$button-blue-shadow: #AAB8E1;
 $white: #fff;
 $vote-yellow: #FFFFBF;
 $vote-yellow-border: #EBEBB2;
@@ -162,6 +163,13 @@ input::-webkit-input-placeholder {color:#E2E2F3;}
 
 .save a {font-size:11px; padding:4px 17px 4px 20px; border-radius:3px; color:#333; background: image-url("pin-icon.png") no-repeat 3px 6px; @include freight-heavy; text-transform:uppercase;}
 .save a:hover {background:$light-grey image-url("pin-icon.png") no-repeat 3px 6px; text-decoration:none;}
+
+.edit {width:30px; float:left; margin-right:10px; margin-top:12px;}
+.delete {width:30px; float:left;  margin-top:12px;}
+.edit a {background: #D7EEFB image-url("edit-icon.png") no-repeat center center; border-radius:3px; padding:5px 15px; @include box-shadow(0 2px 0px $button-blue-shadow);}
+.delete a {background: #D7EEFB image-url("delete-icon.png") no-repeat center center; border-radius:3px; padding:5px 15px; @include box-shadow(0 2px 0px $button-blue-shadow);}
+.edit a:hover {background: #91EDFB image-url("edit-icon.png") no-repeat center center;}
+.delete a:hover {background: #91EDFB image-url("delete-icon.png") no-repeat center center;}
 
 .nav > li > a {color:#747484;}
 .navbar-inner img {width:28px; height:28px; border-radius:3px; border:1px solid #535363;}

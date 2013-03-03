@@ -16,10 +16,10 @@
             = link_to 'LRNT', new_user_session_path, :method => :post, :class => "vote-btn"
 
       - if current_user == post.user
-        %a.edit
-          = link_to 'Edit', edit_post_path(post)
-        %a.delete
-          = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        .edit
+          = link_to '', edit_post_path(post)
+        .delete
+          = link_to '', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
       - else
         .save
           = link_to 'Later', post_bookmark_path(post), :remote => true, :method => :post
