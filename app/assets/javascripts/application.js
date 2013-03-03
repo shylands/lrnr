@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require chosen-jquery
 //= require bootstrap-tab
+//= require bootstrap-dropdown
+//= require bootstrap-modal
 //= require bookmarks

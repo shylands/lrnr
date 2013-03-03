@@ -7,6 +7,13 @@
 $light-grey: #EEE;
 $grey: #666;
 $black: #333;
+$button-green: #BEDE02;
+$button-green-shadow: #A1BC05;
+$button-green-hover: #D4F807;
+$button-green-active: $button-green-shadow;
+$white: #fff;
+$vote-yellow: #FFFFBF;
+$vote-yellow-border: #EBEBB2;
 
 @mixin freight-heavy {
 	font-family: "freight-sans-pro",sans-serif;
@@ -45,22 +52,50 @@ body {
 }
 
 .content-card-tag {
+  font-family: "freight-sans-pro",sans-serif;
   background: $light-grey;
   color: $grey;
   padding: 4px 6px;
   font-size: 13px;
   font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 2px;
 
 }
 
 .about-strapline {
   width: 100%;
+  height: 80px;
+  line-height: 80px;
   font-size: 16px;
+  border-bottom:1px solid #ECECFB;
 }
+
+.about-content {
+  margin-top: 40px;
+  .about-left {
+    float: left;
+    width: 60%;
+  }
+  .about-right {
+    width: 30%;
+    float:right;
+  }
+}
+
+.paragraph-intro {
+  font-size: 21px;
+  line-height: 29px;
+  font-weight: 700;
+}
+
+
 
 .strapline {
   font-weight: 200;
   font-size: 28px;
+  line-height: 76px;
+  margin: 0;
   a {
     text-decoration: underline;
   }
@@ -87,20 +122,103 @@ body {
 
 .navbar a.brand {font-size:18px; font-style: normal;
 	font-weight: 700; color:#CACAD8; color:#fff;}
-.navbar a.brand span {color:#747484; font-size:12px;}
+.navbar a.brand span {color:#747484; font-size:12px; margin-left: 5px;}
 .search-bar {background:#EAFAFF; height:140px;}
 .search-bar input {width:100%; border:1px solid #DBDBEA; height:67px; border-radius:0; font-size:30px; font-family: "freight-sans-pro",sans-serif;
 	font-style: normal; line-height:2em;
 	font-weight: 700; color:#E2E2F3; margin-top:38px; background: #fff image-url("search-icon.png") no-repeat 884px; padding:20px;}
 input::-webkit-input-placeholder {color:#E2E2F3;}
+.submit-btn {
+	background: $vote-yellow;
+  border-radius:5px;
+  font-size:15px;
+  text-transform:uppercase;
+  padding: 3px 5px 3px 5px;
+  line-height: 0;
+  color:#1b1b1b;
+  @include freight-heavy;
+   text-shadow:0;
+   letter-spacing: 1px;
+   margin-top:11px;
+}
+
+.signin-btn {
+  font-size:15px;
+  text-transform:uppercase;
+  padding: 3px 5px 3px 5px;
+  line-height: 0;
+  color:#1b1b1b;
+  @include freight-heavy;
+   text-shadow:0;
+   letter-spacing: 1px;
+   margin-top:11px;
+}
+
+.submit-btn a {color:#1b1b1b !important; text-shadow:0 !important; }
+.submit-btn a:hover {color:#535364 !important;}
 
 .nav > li > a {color:#747484;}
+.navbar-inner img {width:28px; height:28px; border-radius:3px; border:1px solid #535363;}
 
-.vote-count {background:#FFFFBF; border-radius:5px; height:70px; width:70px; text-align:center; line-height: 17px;}
-.vote-count { @include freight-heavy; padding-top:11px; font-size:28px;}
-.vote-btn a {font-size:12px; @include freight-heavy; background:#CEF000; -webkit-box-shadow: 0px 2px 0px rgba(212, 242, 0, 1);
--moz-box-shadow:    0px 2px 0px rgba(212, 242, 0, 1);
-box-shadow:         0px 2px 0px rgba(212, 242, 0, 1); padding:3px 16px; border-radius:3px; color:#0E0E1F;}
+ul.dropdown-menu {background:#0F0F1F; border-radius:0; }
+ul.dropdown-menu li a {color:#fff; @include freight-heavy; text-transform:uppercase;}
+ul.dropdown-menu li:hover {color:#0F0F1F;}
+
+
+.vote-count {  }
+
+.vote-count {
+  @include freight-heavy;
+  height:70px;
+  width:70px;
+  background: $vote-yellow;
+  border-radius:5px;
+  font-size:28px;
+  padding: 5px 5px 7px 5px;
+  height: auto;
+  text-align:center;
+  border:1px solid $vote-yellow-border;
+  .vote-count-number {
+    height: 30px;
+    line-height: 20px;
+    display: block;
+  }
+}
+.vote-btn {
+  position: relative;
+  height: 20px;
+  border-radius:3px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size:12px;
+  line-height: 20px;
+  color: $black;
+  @include freight-heavy;
+  background: $button-green;
+  @include box-shadow(0 2px 0px $button-green-shadow);
+  a {
+    text-shadow: 0 1px 0px rgba(255,255,255,0.2);
+  }
+  &:hover {
+    text-decoration: none;
+    background-color: $button-green-hover;
+    @include box-shadow(0 2px 0px $button-green);
+
+  }
+  &:active {
+    background-color: $button-green-active;
+    bottom: -2px;
+    color: $white;
+    @include box-shadow(0 0 0px $button-green-shadow);
+    &:before {
+      bottom: -2px;
+    }
+  }
+}
+
+
+.well.white {background:#fff; border:0; box-shadow:0; padding:0;}
 
 // Typography
 
