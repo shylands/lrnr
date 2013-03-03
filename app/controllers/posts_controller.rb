@@ -87,7 +87,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to posts_url }
+      format.html { redirect_to dashboard } # This isnt right though.. should be user profile / username
       format.json { head :no_content }
     end
   end

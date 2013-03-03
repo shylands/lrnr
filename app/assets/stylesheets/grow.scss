@@ -208,6 +208,7 @@ ul.dropdown-menu li:hover {color:#0F0F1F;}
     text-shadow: 0 1px 0px rgba(255,255,255,0.2);
   }
   &:hover {
+    color: #141414;
     text-decoration: none;
     background-color: $button-green-hover;
     @include box-shadow(0 2px 0px $button-green);
@@ -228,10 +229,24 @@ ul.dropdown-menu li:hover {color:#0F0F1F;}
 .contribute-btn {
 
   margin-top: 28px;
-  padding: .5em
+  padding: .8em;
+  font-size: 15px;
 
 }
 
+.contribute-btn a {
+
+  color: #141414;
+  letter-spacing: 1px;
+
+}
+
+.contribute-btn a:hover {
+
+  color: #141414;
+  text-decoration: none
+
+}
 
 .well.white {background:#fff; border:0; box-shadow:0; padding:0;}
 

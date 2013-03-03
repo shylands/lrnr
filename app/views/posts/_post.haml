@@ -14,8 +14,15 @@
               = link_to 'LRNT', post_vote_path(post, vote), :method => :post, :class => "vote-btn"
           - else
             = link_to 'LRNT', new_user_session_path, :method => :post, :class => "vote-btn"
-      .save
-        = link_to 'Later', post_bookmark_path(post), :remote => true, :method => :post
+
+      - if current_user == post.user
+        %a.edit
+          = link_to 'Edit', edit_post_path(post)
+        %a.delete
+          = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      - else
+        .save
+          = link_to 'Later', post_bookmark_path(post), :remote => true, :method => :post
 
     .span10
       %h1.content-card-title
@@ -31,6 +38,4 @@
       - post.tags.each do |tag|
         %a.content-card-tag{:href => "/topics/#{tag.title}"}= tag.title
       %br/
-      - if current_user == post.user
-        = link_to 'Edit', edit_post_path(post)
-        = link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      
