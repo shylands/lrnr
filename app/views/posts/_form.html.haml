@@ -1,4 +1,4 @@
-= simple_form_for @post, :html => {:class => 'form-horizontal' } do |f|
+= simple_form_for @post do |f|
   - if @post.errors.any?
     #error_explanation
       %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
@@ -7,16 +7,18 @@
           %li= msg
 
   .field
-    = f.input :title
+    = f.input :title, :label => "Content Title"
   .field
-    = f.input :url
+    = f.input :url, :label => "Content URL"
   .field
-    = f.input :original, :as => :boolean
-  .field
-    = f.input :agreement, :as => :boolean, :label => ""
+    %label.checkbox
+      = f.input :original, :as => :boolean, :label => false, :boolean_style => :inline
+      Did you create this content?
   .field
     = f.input :tags
-    %p iuhoug
+    %label.checkbox
+      = f.input :agreement, :as => :boolean, :label => false, :boolean_style => :inline
+      By ticking this you agree to not post any content that can’t be learnt from or things of a foul, naughty or offensive nature!
 
 
   .actions

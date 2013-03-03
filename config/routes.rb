@@ -5,6 +5,8 @@ Grow::Application.routes.draw do
   resources :posts do
     post 'vote' => 'votes#create', :as => :vote
     delete 'vote' => 'votes#destroy', :as => :vote
+    post 'bookmark' => 'bookmarks#create', :as => :bookmark
+    delete 'bookmark' => 'bookmarks#destroy', :as => :bookmark
   end
 
   resources :topics

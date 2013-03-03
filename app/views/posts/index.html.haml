@@ -41,6 +41,8 @@
                   = post.user.username
                   = time_ago_in_words(post.created_at)
                   ago
+                .save
+                  = link_to 'Save for Later', post_bookmark_path(post), :remote => true, :method => :post
                 .content-card-topics
                   %a.content-card-tag{:href => "/topics/web-design"} Web Design
                   %a.content-card-tag{:href => "/topics/web-design"} Cooking
@@ -55,7 +57,7 @@
     .span4
       %h1.beta
         Topics
-      .well
+      .well.white
         %a.content-card-tag{:href => "/topics/web-design"} Web Design
         %a.content-card-tag{:href => "/topics/web-design"} Cooking
         %a.content-card-tag{:href => "/topics/web-design"} Spanish
