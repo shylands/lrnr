@@ -1,0 +1,9 @@
+%h1.beta Hi #{@user.username.titleize}
+
+.container-fluid
+  .row-fluid
+
+      %div
+        .posts.content-list
+          - @learnt_posts.each do |post|
+            = render post

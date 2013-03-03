@@ -1,5 +1,7 @@
 Grow::Application.routes.draw do
 
+  get "dashboard/index"
+
   match '/about' => "site#about", :as => :about
 
   resources :posts do
@@ -11,7 +13,11 @@ Grow::Application.routes.draw do
 
   resources :topics
 
-  devise_for :users
+  devise_for :users 
+
+  devise_scope :user do
+    root :to => "dashboard#index"
+  end
 
   match '/users/:username' => 'users#show', :as => :user_profile
 
