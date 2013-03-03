@@ -262,7 +262,13 @@ ul.dropdown-menu li:hover {color:#0F0F1F;}
 
 
 .typeahead.dropdown-menu {width:940px; margin-top:37px;}
-.typeahead.dropdown-menu li a {line-height:3em; border-bottom:1px solid #333; font-size:22px;}
+.typeahead.dropdown-menu li a {
+	line-height:3em; 
+	border-bottom:1px solid #333; 
+	font-size:22px;
+	&:last-child{border-bottom: none;}
+	}
+
 
 // Typography
 
