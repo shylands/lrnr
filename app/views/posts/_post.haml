@@ -28,9 +28,9 @@
       %h1.content-card-title
         = link_to post.title, post.url
       %p.content-card-subtext
-        From
+        On
         = link_to get_sitename(post.url), post.url
-        by
+        posted by
         = link_to post.user.username, user_profile_path(post.user.username)
         = time_ago_in_words(post.created_at)
         ago
