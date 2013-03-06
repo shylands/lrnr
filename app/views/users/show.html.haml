@@ -27,18 +27,18 @@
     .tab-content
 
       #tab1.tab-pane.active
-        - if @user.posts.empty?
+        - if @user.bookmarks.empty?
           %p You have no topics bookmarked.
-
         - else
-          - @user.posts.each do |post|
-            = render post
+          - @user.bookmarks.each do |bookmark|
+            = render :partial => 'posts/post', :locals => { :post => bookmark.post }
 
       #tab2.tab-pane
-        - if @user.posts.empty?
+        - if @user.votes.empty?
           %p You havn't LRNT any topics yet.
-        - @user.posts.each do |post|
-          = render post
+        - else
+          - @user.votes.each do |voted|
+            = render :partial => 'posts/post', :locals => { :post => voted.post }
 
 
   .span4
