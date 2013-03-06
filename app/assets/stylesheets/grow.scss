@@ -38,6 +38,7 @@ body {
 
 .content-card {
   margin: 0 0 20px 0;
+  min-height:117px;
   border-bottom:1px solid $border-grey;
   padding: 0;
   &:last-child{border-bottom: none;}
@@ -66,6 +67,7 @@ margin: 0;
   border-radius: 2px;
   line-height: 3em;
 	margin-right: 10px;
+  white-space: nowrap;
 
 }
 
