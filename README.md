@@ -9,6 +9,9 @@
   gem install bundler && bundle install
   rake db:setup
 
+  foreman start
+  localhost:5000
+
 ## Gotchyas
 
 Had to use sqlite3 cause one of the guys couldn't get it installed.
