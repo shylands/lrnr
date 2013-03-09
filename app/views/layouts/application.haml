@@ -36,10 +36,9 @@
     .search-bar
       .container
         .row-fluid
+          %input{"id"=> "search-box", "data-provide" => "typeahead", "autocomplete" => "off", :type => "text", :placeholder => "I WANT TO LEARN...", :value => params[:q]}/
           %li.list-clear.search-bar-click
             %a{:href => "/search/"}
-          %input{"id"=> "search-box", "data-provide" => "typeahead", "autocomplete" => "off", :type => "text", :placeholder => "I WANT TO LEARN...", :value => params[:q]}/
-
     .container
       .row-fluid
 
