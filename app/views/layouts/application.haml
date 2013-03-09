@@ -37,7 +37,7 @@
       .container
         .row-fluid
           %li.list-clear.search-bar-click
-            = link_to '', params[:q]
+            %a{:href => "/search/"}
           %input{"id"=> "search-box", "data-provide" => "typeahead", "autocomplete" => "off", :type => "text", :placeholder => "I WANT TO LEARN...", :value => params[:q]}/
 
     .container
