@@ -10,7 +10,7 @@ users = User.create([
     {username: 'tommy', email: 'hi@tommyp.org', password: 'password', password_confirmation: 'password', twitter: 'twitterusername', website: 'http://website.com/'},
     {username: 'shylands', email: 'shylands@rumblelabs.com', password: 'password', password_confirmation: 'password', twitter: 'twitterusername', website: 'http://website.com/'},
     {username: 'andy', email: 'andy@grow.com', password: 'password', password_confirmation: 'password', twitter: 'twitterusername', website: 'http://website.com/'},
-    {username: 'johnny', email: 'jonathan_alban@me.com', password: 'password', password_confirmation: 'password', twitter: 'twitterusername', website: 'http://website.com/'},
+    {username: 'johnny', email: 'jonathan_alban@icloud.com', password: 'password', password_confirmation: 'password', twitter: 'twitterusername', website: 'http://website.com/'},
     {username: 'matt', email: 'mwc0000@gmail.com', password: 'password', password_confirmation: 'password', twitter: 'twitterusername', website: 'http://website.com/'},
     {username: 'hamstarr', email: 'shamilton@rumblelabs.com', password: 'password', password_confirmation: 'password', twitter: 'twitterusername', website: 'http://website.com/'},
     {username: 'davidjrice', email: 'drice@rumblelabs.com', password: 'password', password_confirmation: 'password', twitter: 'twitterusername', website: 'http://website.com/'},

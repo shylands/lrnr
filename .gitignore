@@ -10,6 +10,9 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 
+# Ignore gem folder used by .rbenv-gemsets
+/gems-grow
+
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
